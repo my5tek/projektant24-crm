@@ -1,5 +1,7 @@
+import { NextResponse } from 'next/server'
+
 export function middleware() {
-  return Response.next()
+  return NextResponse.next()
 }
 
 export const config = {
