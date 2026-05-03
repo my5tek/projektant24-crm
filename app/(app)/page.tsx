@@ -18,20 +18,7 @@ export default async function DashboardPage() {
   const now = new Date()
   const month = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`
   const today = now.toISOString().slice(0, 10)
-  
-  let supabase
-  try {
-    supabase = await createClient()
-  } catch (e: any) {
-    return (
-      <div className="p-7">
-        <div className="bg-red-50 border border-red-200 p-4 rounded">
-          <h1 className="text-red-800 font-bold">Błąd konfiguracji</h1>
-          <p className="text-red-600 mt-2">{e.message}</p>
-        </div>
-      </div>
-    )
-  }
+  const supabase = await createClient()
 
   const [projects, summary, tasks, profiles] = await Promise.all([
     getProjects(),
@@ -53,7 +40,6 @@ export default async function DashboardPage() {
         <KpiRow income={summary.income} expense={summary.expense} profit={summary.profit} tasksDue={tasksDue} />
 
         <div className="grid grid-cols-[1fr_340px] gap-5">
-          {/* Projects table */}
           <div className="bg-white">
             <div className="px-5 py-3.5 border-b border-paper flex justify-between items-center">
               <h2 className="font-display font-bold text-[13px] uppercase tracking-wide">Aktywne projekty</h2>
