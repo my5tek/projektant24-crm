@@ -1,5 +1,6 @@
 import type { Config } from 'tailwindcss'
 
+// NOTE: Tailwind v4 reads tokens from app/globals.css @theme. This file is brand documentation only.
 const config: Config = {
   content: ['./app/**/*.{ts,tsx}', './components/**/*.{ts,tsx}'],
   theme: {
