@@ -18,7 +18,20 @@ export default async function DashboardPage() {
   const now = new Date()
   const month = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`
   const today = now.toISOString().slice(0, 10)
-  const supabase = await createClient()
+  
+  let supabase
+  try {
+    supabase = await createClient()
+  } catch (e: any) {
+    return (
+      <div className="p-7">
+        <div className="bg-red-50 border border-red-200 p-4 rounded">
+          <h1 className="text-red-800 font-bold">Błąd konfiguracji</h1>
+          <p className="text-red-600 mt-2">{e.message}</p>
+        </div>
+      </div>
+    )
+  }
 
   const [projects, summary, tasks, profiles] = await Promise.all([
     getProjects(),
