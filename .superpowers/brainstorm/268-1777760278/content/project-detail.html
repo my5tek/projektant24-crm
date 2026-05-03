@@ -1,0 +1,427 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Audiowide&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#F2F0EC;font-family:'Barlow',sans-serif;color:#1A1A1A}
+.app{display:grid;grid-template-columns:220px 1fr;min-height:100vh}
+.sidebar{background:#1A1A1A;display:flex;flex-direction:column}
+.sidebar-logo{padding:20px 20px 16px;border-bottom:2px solid #E8620A;font-family:'Audiowide',sans-serif;font-size:13px;color:#fff}
+.sidebar-logo span{color:#E8620A}
+.sidebar-logo small{font-family:'Barlow';font-size:10px;color:rgba(255,255,255,.3);display:block;margin-top:2px;letter-spacing:.1em}
+.sidebar-user{padding:14px 20px;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:center;gap:10px}
+.avatar{width:32px;height:32px;border-radius:50%;background:#E8620A;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;color:#fff;flex-shrink:0}
+.user-name{font-size:13px;font-weight:600;color:#fff}
+.user-role{font-size:11px;color:rgba(255,255,255,.35);letter-spacing:.05em}
+.nav{padding:16px 0}
+.nav-section{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.2);padding:8px 20px 6px;font-weight:600}
+.nav-item{display:flex;align-items:center;gap:10px;padding:9px 20px;font-size:13px;font-weight:500;color:rgba(255,255,255,.45);cursor:pointer;border-left:3px solid transparent}
+.nav-item.active{color:#fff;border-left-color:#E8620A;background:rgba(232,98,10,.08)}
+.nav-item svg{width:15px;height:15px;flex-shrink:0;opacity:.7}
+.nav-item.active svg{opacity:1}
+
+.main{display:flex;flex-direction:column}
+.topbar{background:#fff;border-bottom:1px solid #D4D4D4;padding:0 28px;height:52px;display:flex;align-items:center;gap:12px}
+.breadcrumb{font-size:12px;color:#6B6B6B;display:flex;align-items:center;gap:8px}
+.breadcrumb span{color:#1A1A1A;font-weight:600}
+.breadcrumb::before{content:'←';color:#6B6B6B;font-size:14px}
+.status-badge{display:inline-block;font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:3px 8px}
+.s-progress{background:rgba(26,26,26,.08);color:#1A1A1A}
+.btn{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:7px 16px;border:none;cursor:pointer}
+.btn-primary{background:#E8620A;color:#fff}
+.btn-primary:hover{background:#C0510A}
+.btn-ghost{background:transparent;color:#6B6B6B;border:1px solid #D4D4D4}
+.btn-ghost:hover{border-color:#1A1A1A;color:#1A1A1A}
+
+.content{padding:24px 28px;flex:1}
+
+/* PROJECT HEADER */
+.proj-header{background:#1A1A1A;padding:24px 28px;margin-bottom:20px;position:relative;overflow:hidden}
+.proj-header-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:40px 40px}
+.proj-header-inner{position:relative;z-index:1;display:flex;align-items:flex-start;justify-content:space-between;gap:20px}
+.proj-header-left{flex:1}
+.proj-type-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:#E8620A;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.proj-type-label::before{content:'';width:24px;height:2px;background:#E8620A}
+.proj-name{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:32px;color:#fff;line-height:1;margin-bottom:6px}
+.proj-sub{font-size:14px;color:rgba(255,255,255,.4);display:flex;gap:16px;flex-wrap:wrap}
+.proj-sub span{display:flex;align-items:center;gap:4px}
+.proj-meta-right{display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+.proj-value-block{text-align:right}
+.proj-value-label{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:4px}
+.proj-value{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:28px;color:#fff}
+.proj-value em{color:#E8620A;font-style:normal}
+
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:1fr 340px;gap:20px}
+.col-left{display:flex;flex-direction:column;gap:20px}
+.col-right{display:flex;flex-direction:column;gap:20px}
+
+/* PANEL */
+.panel{background:#fff}
+.panel-head{padding:14px 20px;border-bottom:1px solid #F2F0EC;display:flex;align-items:center;justify-content:space-between}
+.panel-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:.05em;text-transform:uppercase}
+
+/* PAYMENT PHASES */
+.phase{border-bottom:1px solid #F2F0EC}
+.phase:last-child{border-bottom:none}
+.phase-header{padding:14px 20px;display:flex;align-items:center;gap:14px;cursor:pointer}
+.phase-num{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:13px;flex-shrink:0}
+.ph-done{background:#E8620A;color:#fff}
+.ph-active{background:#1A1A1A;color:#E8620A;border:2px solid #E8620A}
+.ph-pending{background:#F2F0EC;color:#6B6B6B}
+.phase-info{flex:1}
+.phase-name{font-size:13px;font-weight:600}
+.phase-desc{font-size:11px;color:#6B6B6B;margin-top:2px}
+.phase-amount{text-align:right}
+.phase-total{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px}
+.phase-paid-label{font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+.paid-ok{color:#E8620A}
+.paid-wait{color:#6B6B6B}
+.phase-body{padding:0 20px 16px 62px;display:flex;flex-direction:column;gap:8px}
+.pay-row{display:flex;align-items:center;gap:12px}
+.pay-row-label{font-size:12px;color:#6B6B6B;flex:1}
+.pay-row-amount{font-size:13px;font-weight:600}
+.pay-row-status{padding:2px 8px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.tag-paid{background:rgba(232,98,10,.1);color:#E8620A}
+.tag-wait{background:#F2F0EC;color:#6B6B6B}
+.tag-overdue{background:rgba(192,81,10,.1);color:#C0510A}
+
+/* MARGIN BOX */
+.margin-box{margin:0 20px 16px 62px;padding:10px 14px;background:#F2F0EC;border-left:3px solid #E8620A;display:flex;justify-content:space-between;align-items:center}
+.margin-box-label{font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:#6B6B6B}
+.margin-box-value{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;color:#E8620A}
+
+/* TASKS */
+.task-item{padding:11px 16px;border-bottom:1px solid #F2F0EC;display:flex;align-items:flex-start;gap:10px}
+.task-item:last-child{border-bottom:none}
+.task-check{width:16px;height:16px;border:2px solid #D4D4D4;border-radius:2px;flex-shrink:0;margin-top:2px}
+.task-check.done{background:#E8620A;border-color:#E8620A}
+.task-title{font-size:13px;font-weight:500;flex:1}
+.task-title.done-text{color:#6B6B6B;text-decoration:line-through}
+.mini-avatar{width:20px;height:20px;border-radius:50%;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0;margin-top:1px}
+.av-p{background:#E8620A}
+.av-m{background:#2C2C2C}
+.task-due{font-size:11px;color:#6B6B6B;white-space:nowrap;margin-top:2px}
+.task-due.overdue{color:#C0510A}
+
+/* EXPENSES */
+.exp-item{padding:11px 16px;border-bottom:1px solid #F2F0EC;display:flex;align-items:center;gap:12px}
+.exp-item:last-child{border-bottom:none}
+.exp-cat{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.exp-info{flex:1}
+.exp-name{font-size:13px;font-weight:500}
+.exp-date{font-size:11px;color:#6B6B6B;margin-top:1px}
+.exp-amount{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px}
+.exp-amount.income-amt{color:#E8620A}
+.exp-amount.expense-amt{color:#1A1A1A}
+.exp-total-row{padding:10px 16px;background:#F2F0EC;display:flex;justify-content:space-between;align-items:center}
+.exp-total-label{font-size:10px;letter-spacing:.15em;text-transform:uppercase;font-weight:600;color:#6B6B6B}
+
+/* NOTES */
+.notes-body{padding:16px 20px}
+.notes-text{font-size:14px;color:#2C2C2C;line-height:1.7;font-style:italic;border-left:3px solid #E8620A;padding-left:14px}
+.notes-meta{font-size:11px;color:#6B6B6B;margin-top:10px;letter-spacing:.05em}
+</style>
+
+<div class="app">
+  <div class="sidebar">
+    <div class="sidebar-logo">PROJEKTANT<span>24</span><small>CRM</small></div>
+    <div class="sidebar-user">
+      <div class="avatar">P</div>
+      <div><div class="user-name">Przemek</div><div class="user-role">Admin</div></div>
+    </div>
+    <nav class="nav">
+      <div class="nav-section">Menu</div>
+      <a class="nav-item" href="#">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="1" width="6" height="6"/><rect x="9" y="1" width="6" height="6"/><rect x="1" y="9" width="6" height="6"/><rect x="9" y="9" width="6" height="6"/></svg>Dashboard
+      </a>
+      <a class="nav-item active" href="#">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="12" height="12" rx="1"/><line x1="2" y1="6" x2="14" y2="6"/><line x1="6" y1="2" x2="6" y2="6"/><line x1="10" y1="2" x2="10" y2="6"/></svg>Projekty
+      </a>
+      <a class="nav-item" href="#">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="1,11 5,7 9,9 15,3"/></svg>Finanse
+      </a>
+      <a class="nav-item" href="#">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="14" height="11" rx="1"/><polyline points="4,3 4,1 12,1 12,3"/></svg>Zadania
+      </a>
+    </nav>
+  </div>
+
+  <div class="main">
+    <div class="topbar">
+      <div class="breadcrumb">Projekty <span>Zakład ABC — Garderoba + Kuchnia</span></div>
+      <div style="margin-left:auto;display:flex;gap:8px;align-items:center">
+        <span class="status-badge s-progress">W toku</span>
+        <button class="btn btn-ghost">Edytuj</button>
+        <button class="btn btn-primary">+ Zadanie</button>
+      </div>
+    </div>
+
+    <div class="content">
+      <!-- PROJECT HEADER -->
+      <div class="proj-header">
+        <div class="proj-header-grid"></div>
+        <div class="proj-header-inner">
+          <div class="proj-header-left">
+            <div class="proj-type-label">Pomiar + Projekt + Montaż</div>
+            <div class="proj-name">Zakład ABC</div>
+            <div class="proj-sub">
+              <span>📐 12 mb</span>
+              <span>📅 Termin: 28 maja 2026</span>
+              <span>👤 Garderoba + Kuchnia</span>
+            </div>
+          </div>
+          <div class="proj-meta-right">
+            <div class="proj-value-block">
+              <div class="proj-value-label">Wartość projektu</div>
+              <div class="proj-value">18 <em>400</em> zł</div>
+            </div>
+            <div class="proj-value-block">
+              <div class="proj-value-label">Marża materiałowa</div>
+              <div class="proj-value" style="font-size:18px">+<em>1 200</em> zł</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="layout">
+        <div class="col-left">
+
+          <!-- PAYMENT PHASES -->
+          <div class="panel">
+            <div class="panel-head">
+              <div class="panel-title">Harmonogram płatności</div>
+              <span style="font-size:11px;color:#6B6B6B">3 fazy</span>
+            </div>
+
+            <!-- FAZA A -->
+            <div class="phase">
+              <div class="phase-header">
+                <div class="phase-num ph-done">A</div>
+                <div class="phase-info">
+                  <div class="phase-name">Faza A — Pomiar + Projekt</div>
+                  <div class="phase-desc">Dokumentacja techniczna CAD, model 3D</div>
+                </div>
+                <div class="phase-amount">
+                  <div class="phase-total">1 800 zł</div>
+                  <div class="phase-paid-label paid-ok">✓ Rozliczone</div>
+                </div>
+              </div>
+              <div class="phase-body">
+                <div class="pay-row">
+                  <div class="pay-row-label">Zaliczka 50%</div>
+                  <div class="pay-row-amount">900 zł</div>
+                  <div class="pay-row-status tag-paid">Opłacone</div>
+                </div>
+                <div class="pay-row">
+                  <div class="pay-row-label">Finalna 50% — po dostarczeniu</div>
+                  <div class="pay-row-amount">900 zł</div>
+                  <div class="pay-row-status tag-paid">Opłacone</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAZA B -->
+            <div class="phase">
+              <div class="phase-header">
+                <div class="phase-num ph-done">B</div>
+                <div class="phase-info">
+                  <div class="phase-name">Faza B — Materiały</div>
+                  <div class="phase-desc">Płyty, akcesoria, okucia — 100% z góry</div>
+                </div>
+                <div class="phase-amount">
+                  <div class="phase-total">8 400 zł</div>
+                  <div class="phase-paid-label paid-ok">✓ Opłacone</div>
+                </div>
+              </div>
+              <div class="phase-body">
+                <div class="pay-row">
+                  <div class="pay-row-label">Cena dla klienta (100% z góry)</div>
+                  <div class="pay-row-amount">8 400 zł</div>
+                  <div class="pay-row-status tag-paid">Opłacone</div>
+                </div>
+                <div class="pay-row">
+                  <div class="pay-row-label">Koszt zakupu u dostawcy</div>
+                  <div class="pay-row-amount" style="color:#6B6B6B">7 200 zł</div>
+                  <div class="pay-row-status tag-paid" style="background:#F2F0EC;color:#6B6B6B">Zapłacone</div>
+                </div>
+              </div>
+              <div class="margin-box">
+                <div class="margin-box-label">Marża materiałowa</div>
+                <div class="margin-box-value">+ 1 200 zł</div>
+              </div>
+            </div>
+
+            <!-- FAZA C -->
+            <div class="phase">
+              <div class="phase-header">
+                <div class="phase-num ph-active">C</div>
+                <div class="phase-info">
+                  <div class="phase-name">Faza C — Montaż + Nadzór</div>
+                  <div class="phase-desc">Rozliczenie końcowe po zakończeniu montażu</div>
+                </div>
+                <div class="phase-amount">
+                  <div class="phase-total">8 200 zł</div>
+                  <div class="phase-paid-label paid-wait">⏳ Oczekuje</div>
+                </div>
+              </div>
+              <div class="phase-body">
+                <div class="pay-row">
+                  <div class="pay-row-label">Rozliczenie końcowe — po montażu</div>
+                  <div class="pay-row-amount">8 200 zł</div>
+                  <div class="pay-row-status tag-wait">Oczekuje</div>
+                </div>
+                <div class="pay-row">
+                  <div class="pay-row-label">Planowana data montażu</div>
+                  <div class="pay-row-amount" style="color:#6B6B6B;font-size:12px">25–27 maja 2026</div>
+                  <div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ZADANIA -->
+          <div class="panel">
+            <div class="panel-head">
+              <div class="panel-title">Zadania projektu</div>
+              <button style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;background:#E8620A;color:#fff;border:none;cursor:pointer">+ Dodaj</button>
+            </div>
+            <div class="task-item">
+              <div class="task-check done"></div>
+              <div class="mini-avatar av-p">P</div>
+              <div style="flex:1">
+                <div class="task-title done-text">Projekt CAD — garderoba</div>
+              </div>
+              <div class="task-due">2 maj</div>
+            </div>
+            <div class="task-item">
+              <div class="task-check done"></div>
+              <div class="mini-avatar av-m">M</div>
+              <div style="flex:1">
+                <div class="task-title done-text">Zamówienie materiałów u dostawcy</div>
+              </div>
+              <div class="task-due">5 maj</div>
+            </div>
+            <div class="task-item">
+              <div class="task-check"></div>
+              <div class="mini-avatar av-p">P</div>
+              <div style="flex:1">
+                <div class="task-title">Projekt CAD — kuchnia (korekta po uwagach)</div>
+              </div>
+              <div class="task-due overdue">⚠ 8 maj</div>
+            </div>
+            <div class="task-item">
+              <div class="task-check"></div>
+              <div class="mini-avatar av-m">M</div>
+              <div style="flex:1">
+                <div class="task-title">Nadzór montażu — dzień 1</div>
+              </div>
+              <div class="task-due">25 maj</div>
+            </div>
+            <div class="task-item">
+              <div class="task-check"></div>
+              <div class="mini-avatar av-m">M</div>
+              <div style="flex:1">
+                <div class="task-title">Nadzór montażu — dzień 2</div>
+              </div>
+              <div class="task-due">26 maj</div>
+            </div>
+            <div class="task-item">
+              <div class="task-check"></div>
+              <div class="mini-avatar av-p">P</div>
+              <div style="flex:1">
+                <div class="task-title">Rozliczenie końcowe z klientem</div>
+              </div>
+              <div class="task-due">27 maj</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-right">
+
+          <!-- TRANSACTIONS -->
+          <div class="panel">
+            <div class="panel-head">
+              <div class="panel-title">Przychody / wydatki</div>
+              <button style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;background:#E8620A;color:#fff;border:none;cursor:pointer">+ Dodaj</button>
+            </div>
+            <div class="exp-item">
+              <div class="exp-cat" style="background:#E8620A"></div>
+              <div class="exp-info">
+                <div class="exp-name">Zaliczka faza A</div>
+                <div class="exp-date">28 kwi 2026</div>
+              </div>
+              <div class="exp-amount income-amt">+900 zł</div>
+            </div>
+            <div class="exp-item">
+              <div class="exp-cat" style="background:#E8620A"></div>
+              <div class="exp-info">
+                <div class="exp-name">Finalna faza A</div>
+                <div class="exp-date">3 maj 2026</div>
+              </div>
+              <div class="exp-amount income-amt">+900 zł</div>
+            </div>
+            <div class="exp-item">
+              <div class="exp-cat" style="background:#E8620A"></div>
+              <div class="exp-info">
+                <div class="exp-name">Materiały — od klienta</div>
+                <div class="exp-date">5 maj 2026</div>
+              </div>
+              <div class="exp-amount income-amt">+8 400 zł</div>
+            </div>
+            <div class="exp-item">
+              <div class="exp-cat" style="background:#6B6B6B"></div>
+              <div class="exp-info">
+                <div class="exp-name">Materiały — zakup u dostawcy</div>
+                <div class="exp-date">6 maj 2026</div>
+              </div>
+              <div class="exp-amount expense-amt">−7 200 zł</div>
+            </div>
+            <div class="exp-total-row">
+              <div class="exp-total-label">Saldo projektu</div>
+              <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;color:#E8620A">+3 000 zł</div>
+            </div>
+            <div class="exp-total-row" style="background:#fff;border-top:1px solid #F2F0EC">
+              <div class="exp-total-label" style="color:#6B6B6B">Oczekuje (Faza C)</div>
+              <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;color:#6B6B6B">+8 200 zł</div>
+            </div>
+          </div>
+
+          <!-- NOTATKI -->
+          <div class="panel">
+            <div class="panel-head">
+              <div class="panel-title">Notatki / brief</div>
+              <button style="font-size:11px;font-weight:600;padding:4px 10px;background:transparent;border:1px solid #D4D4D4;cursor:pointer;color:#6B6B6B">Edytuj</button>
+            </div>
+            <div class="notes-body">
+              <div class="notes-text">Garderoba 3,2 mb w sypialni — litera U. Kuchnia 4,8 mb — wyspa po prawej stronie. Klient chce fronty lakierowane białe mat. Uwaga: ściana w kuchni odchylona ~0,5°.</div>
+              <div class="notes-meta">Ostatnia edycja: Przemek · 2 maja 2026</div>
+            </div>
+          </div>
+
+          <!-- INFO -->
+          <div class="panel">
+            <div class="panel-head"><div class="panel-title">Dane projektu</div></div>
+            <div style="padding:14px 20px;display:flex;flex-direction:column;gap:10px">
+              <div style="display:flex;justify-content:space-between;font-size:13px;border-bottom:1px solid #F2F0EC;padding-bottom:8px">
+                <span style="color:#6B6B6B">Typ</span><span style="font-weight:600">Pomiar + Proj + Montaż</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-size:13px;border-bottom:1px solid #F2F0EC;padding-bottom:8px">
+                <span style="color:#6B6B6B">Metry bieżące</span><span style="font-weight:600">12 mb</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-size:13px;border-bottom:1px solid #F2F0EC;padding-bottom:8px">
+                <span style="color:#6B6B6B">Stawka bazowa</span><span style="font-weight:600">150 zł/mb (CNC)</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-size:13px;border-bottom:1px solid #F2F0EC;padding-bottom:8px">
+                <span style="color:#6B6B6B">Termin dokumentacji</span><span style="font-weight:600">10 maja 2026</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-size:13px">
+                <span style="color:#6B6B6B">Termin montażu</span><span style="font-weight:600">25–27 maja 2026</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

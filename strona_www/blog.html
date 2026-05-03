@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Porady o dokumentacji CAD dla stolarzy | Projektant24</title>
+<meta name="description" content="Praktyczne porady o dokumentacji CAD, organizacji produkcji i unikaniu błędów montażowych. Wiedza z hali dla małych stolarni.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://projektant24.pl/blog">
+<meta name="geo.region" content="PL">
+<meta property="og:type" content="blog">
+<meta property="og:url" content="https://projektant24.pl/blog">
+<meta property="og:title" content="Blog — Porady dla stolarzy | Projektant24">
+<meta property="og:description" content="Praktyczne porady o dokumentacji CAD i unikaniu błędów montażowych.">
+<meta property="og:locale" content="pl_PL">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Blog","name":"Blog Projektant24","description":"Porady o dokumentacji CAD i produkcji mebli dla stolarzy","url":"https://projektant24.pl/blog","publisher":{"@type":"Organization","name":"Projektant24"}}
+</script>
+<link rel="stylesheet" href="style.css">
+<style>
+.page-hero{background:var(--black);padding:140px 80px 80px;position:relative;overflow:hidden}
+.page-hero .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.035) 1px,transparent 1px);background-size:60px 60px}
+.page-hero-inner{position:relative;z-index:1;max-width:800px}
+.page-hero h1{font-family:var(--f-d);font-weight:800;font-size:clamp(42px,6vw,80px);color:var(--white);line-height:1;letter-spacing:-0.02em;margin-bottom:20px}
+.page-hero h1 em{color:var(--orange);font-style:normal}
+.page-hero p{font-size:18px;color:rgba(255,255,255,0.5);max-width:520px;line-height:1.65}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:52px}
+.blog-card{background:var(--white);display:flex;flex-direction:column;transition:transform 0.2s;text-decoration:none;color:inherit}
+.blog-card:hover{transform:translateY(-4px)}
+.blog-card-top{height:180px;background:var(--dark);position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.blog-card-top-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:24px 24px}
+.blog-card-top-num{font-family:var(--f-d);font-weight:800;font-size:80px;color:rgba(255,255,255,0.06);position:absolute}
+.blog-card-top-icon{position:relative;z-index:1;width:48px;height:48px}
+.blog-card-top-icon svg{width:100%;height:100%;stroke:var(--orange);fill:none;stroke-width:1.5}
+.blog-cat{position:absolute;top:14px;left:14px;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;font-weight:600;color:var(--orange);border:1px solid var(--orange);padding:3px 8px}
+.blog-body{padding:28px 24px;flex:1;display:flex;flex-direction:column;gap:10px}
+.blog-meta{font-size:11px;color:var(--mid);letter-spacing:0.05em}
+.blog-title{font-family:var(--f-d);font-weight:700;font-size:20px;line-height:1.25}
+.blog-excerpt{font-size:14px;color:var(--mid);line-height:1.6;flex:1}
+.blog-read{font-size:13px;color:var(--orange);font-weight:600;letter-spacing:0.05em;margin-top:8px}
+.featured-post{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--white);margin-bottom:2px}
+.featured-img{background:var(--dark);min-height:320px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.featured-img-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:30px 30px}
+.featured-img-icon{position:relative;z-index:1}
+.featured-img-icon svg{width:72px;height:72px;stroke:rgba(255,255,255,0.1);fill:none;stroke-width:1}
+.featured-body{padding:48px 40px;display:flex;flex-direction:column;justify-content:center;gap:16px}
+.featured-tag{display:inline-block;background:var(--orange);color:white;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;font-weight:700;padding:4px 10px}
+.featured-body h2{font-family:var(--f-d);font-weight:800;font-size:28px;line-height:1.2}
+.featured-body p{font-size:15px;color:var(--mid);line-height:1.65}
+@media(max-width:900px){.page-hero{padding:100px 24px 56px}.blog-grid{grid-template-columns:1fr}.featured-post{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-logo">PROJEKTANT<span>24</span></a>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Strona główna</a>
+    <a href="cennik.html">Cennik</a>
+    <a href="realizacje.html">Realizacje</a>
+    <a href="blog.html" class="active">Blog</a>
+    <a href="kontakt.html" class="nav-cta">ZACZNIJMY PROJEKT</a>
+  </div>
+  <div class="nav-hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page-hero">
+  <div class="hero-grid"></div>
+  <div class="page-hero-inner">
+    <div class="section-label" style="margin-bottom:16px">Wiedza z hali</div>
+    <h1>Porady, które<br><em>oszczędzają czas</em><br>i pieniądze.</h1>
+    <p>Konkretna wiedza o dokumentacji, produkcji i montażu — pisana przez kogoś, kto sam stał przy pile i na rusztowaniu.</p>
+  </div>
+</div>
+
+<section style="background:var(--paper)">
+  <div class="section-label">Wyróżniony artykuł</div>
+  <div class="featured-post">
+    <div class="featured-img"><div class="featured-img-bg"></div><div class="featured-img-icon"><svg viewBox="0 0 48 48"><rect x="6" y="8" width="36" height="32" rx="2"/><line x1="6" y1="16" x2="42" y2="16"/><line x1="14" y1="24" x2="34" y2="24"/><line x1="14" y1="30" x2="28" y2="30"/></svg></div></div>
+    <div class="featured-body">
+      <span class="featured-tag">Dokumentacja</span>
+      <h2>5 błędów w dokumentacji, które kosztują Cię poprawki na montażu</h2>
+      <p>Po 8 latach pracy zebrałem listę tych samych błędów, które wracają jak bumerang. Numer 3 kosztował jednego z moich klientów dwa dni pracy.</p>
+      <a href="#" class="btn btn-dark" style="align-self:flex-start">Czytaj artykuł →</a>
+    </div>
+  </div>
+
+  <div class="section-label" style="margin-top:60px">Wszystkie artykuły</div>
+  <div class="blog-grid">
+    <a href="#" class="blog-card"><div class="blog-card-top"><div class="blog-card-top-bg"></div><div class="blog-card-top-num">01</div><div class="blog-card-top-icon"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/><path d="M24 14v10l6 4"/></svg></div><span class="blog-cat">Organizacja</span></div><div class="blog-body"><div class="blog-meta">15 Kwiecień 2026 · 5 min</div><div class="blog-title">Jak skrócić czas między zleceniem a produkcją?</div><div class="blog-excerpt">Większość stolarni traci 2–3 dni na komunikację z projektantem. Pokazuję prosty system briefowania.</div><div class="blog-read">Czytaj →</div></div></a>
+    <a href="#" class="blog-card"><div class="blog-card-top"><div class="blog-card-top-bg"></div><div class="blog-card-top-num">02</div><div class="blog-card-top-icon"><svg viewBox="0 0 48 48"><rect x="8" y="10" width="32" height="28" rx="2"/><polyline points="16,20 24,28 32,20"/></svg></div><span class="blog-cat">CAD</span></div><div class="blog-body"><div class="blog-meta">8 Kwiecień 2026 · 7 min</div><div class="blog-title">Lista cięcia vs zestawienie elementów — jaka różnica?</div><div class="blog-excerpt">Wiele stolarni miesza te pojęcia. Tymczasem lista cięcia bez prawidłowego zestawienia to recepta na chaos.</div><div class="blog-read">Czytaj →</div></div></a>
+    <a href="#" class="blog-card"><div class="blog-card-top"><div class="blog-card-top-bg"></div><div class="blog-card-top-num">03</div><div class="blog-card-top-icon"><svg viewBox="0 0 48 48"><path d="M10 38 L10 22 L24 10 L38 22 L38 38"/><rect x="18" y="26" width="12" height="12"/></svg></div><span class="blog-cat">Montaż</span></div><div class="blog-body"><div class="blog-meta">1 Kwiecień 2026 · 6 min</div><div class="blog-title">Kierunek słoja — dlaczego połowa projektantów go ignoruje</div><div class="blog-excerpt">Pozorny szczegół powodujący jedną z najczęstszych reklamacji przy kuchniach oklejanych.</div><div class="blog-read">Czytaj →</div></div></a>
+    <a href="#" class="blog-card"><div class="blog-card-top"><div class="blog-card-top-bg"></div><div class="blog-card-top-num">04</div><div class="blog-card-top-icon"><svg viewBox="0 0 48 48"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><span class="blog-cat">Biznes</span></div><div class="blog-body"><div class="blog-meta">22 Marzec 2026 · 4 min</div><div class="blog-title">Outsourcing projektowania: kiedy się opłaca małej stolarni?</div><div class="blog-excerpt">Prosty rachunek: etatowy projektant vs outsourcing. Liczby mówią same za siebie.</div><div class="blog-read">Czytaj →</div></div></a>
+    <a href="#" class="blog-card"><div class="blog-card-top"><div class="blog-card-top-bg"></div><div class="blog-card-top-num">05</div><div class="blog-card-top-icon"><svg viewBox="0 0 48 48"><path d="M12 26 L20 34 L36 14"/><circle cx="24" cy="24" r="18"/></svg></div><span class="blog-cat">Jakość</span></div><div class="blog-body"><div class="blog-meta">14 Marzec 2026 · 8 min</div><div class="blog-title">Checklist przed wysłaniem dokumentacji do produkcji</div><div class="blog-excerpt">Lista 12 punktów, którą sprawdzamy przed każdym projektem. Możesz ją zastosować samodzielnie.</div><div class="blog-read">Czytaj →</div></div></a>
+    <a href="#" class="blog-card"><div class="blog-card-top"><div class="blog-card-top-bg"></div><div class="blog-card-top-num">06</div><div class="blog-card-top-icon"><svg viewBox="0 0 48 48"><rect x="6" y="8" width="36" height="32" rx="2"/><line x1="6" y1="16" x2="42" y2="16"/></svg></div><span class="blog-cat">Narzędzia</span></div><div class="blog-body"><div class="blog-meta">5 Marzec 2026 · 5 min</div><div class="blog-title">Jakie informacje dać projektantowi, żeby projekt wyszedł za pierwszym razem?</div><div class="blog-excerpt">Idealny brief w 10 punktach — oszczędza 2–3 rundy poprawek.</div><div class="blog-read">Czytaj →</div></div></a>
+  </div>
+</section>
+
+<section style="background:var(--black);text-align:center;padding:80px">
+  <div class="section-label" style="justify-content:center">Newsletter</div>
+  <h2 style="color:var(--white);margin-bottom:16px">Nowy artykuł co tydzień.</h2>
+  <p style="color:rgba(255,255,255,0.4);margin-bottom:36px;max-width:400px;margin-left:auto;margin-right:auto">Tylko konkretna wiedza. Zero spamu.</p>
+  <div style="display:flex;gap:0;max-width:400px;margin:0 auto">
+    <input type="email" id="nl-email" placeholder="twoj@email.pl" style="flex:1;padding:14px 18px;border:none;font-family:var(--f-b);font-size:15px;background:rgba(255,255,255,0.08);color:white;outline:none;border:1px solid rgba(255,255,255,0.1)">
+    <button style="padding:14px 24px;background:var(--orange);border:none;color:white;font-family:var(--f-d);font-weight:700;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer" onclick="this.textContent='Zapisano ✓';this.style.background='#16a34a'">Zapisz się</button>
+  </div>
+</section>
+
+<footer>
+  <div><div class="footer-logo">PROJEKTANT<span>24</span></div><div style="font-size:13px;color:rgba(255,255,255,0.3);margin-top:6px">Dokumentacja CAD dla zakładów stolarskich</div></div>
+  <div class="footer-links"><a href="cennik.html">Cennik</a><a href="realizacje.html">Realizacje</a><a href="blog.html">Blog</a><a href="kontakt.html">Kontakt</a><a href="https://facebook.com/projektant24" target="_blank" rel="noopener">Facebook</a></div>
+  <div class="footer-copy">© 2026 Projektant24.</div>
+</footer>
+<a href="https://wa.me/48123456789" target="_blank" class="wa-float"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+</body>
+</html>

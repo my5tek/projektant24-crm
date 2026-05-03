@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand colors */
+  --color-black:    #1A1A1A;
+  --color-dark:     #2C2C2C;
+  --color-mid:      #6B6B6B;
+  --color-light:    #D4D4D4;
+  --color-paper:    #F2F0EC;
+  --color-orange:   #E8620A;
+  --color-orange-d: #C0510A;
+
+  /* Brand fonts */
+  --font-display:  var(--font-barlow-condensed), sans-serif;
+  --font-body:     var(--font-barlow), sans-serif;
+  --font-wordmark: var(--font-audiowide), sans-serif;
+}

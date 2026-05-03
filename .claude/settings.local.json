@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bash \"C:/Users/Przemek/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/brainstorming/scripts/start-server.sh\" --project-dir \"J:/MystekOS\")",
+      "Bash(mkdir -p /tmp/crm-scaffold)",
+      "Bash(npx create-next-app@latest /tmp/crm-scaffold --typescript --tailwind --app --src-dir=false --import-alias=\"@/*\" --no-git)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)"
+    ]
+  }
+}

@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projekty dla stolarzy, Dokumentacja CAD i Rozkroje mebli | Projektant24</title>
+<meta name="description" content="Profesjonalne projekty dla stolarzy: dokumentacja techniczna CAD, listy cięcia, rozkroje i pliki na CNC. Projekty mebli gotowe do produkcji w 3–5 dni. Sprawdź!">
+<meta name="keywords" content="dokumentacja CAD stolarze, projekty mebli CAD, technolog mebli, rysunki techniczne mebli, projekt kuchni CAD, dokumentacja techniczna mebli, projektant mebli na zamówienie">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Projektant24">
+<link rel="canonical" href="https://projektant24.pl/">
+<meta name="geo.region" content="PL">
+<meta name="geo.placename" content="Polska">
+<meta name="geo.position" content="52.0;19.0">
+<meta name="ICBM" content="52.0, 19.0">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://projektant24.pl/">
+<meta property="og:title" content="Projekty dla stolarzy, Dokumentacja CAD i Rozkroje mebli | Projektant24">
+<meta property="og:description" content="Projekty mebli CAD gotowe do produkcji w 3–5 dni. Żadnych błędów montażowych — gwarantowane.">
+<meta property="og:image" content="https://projektant24.pl/og-image.jpg">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:site_name" content="Projektant24">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Projekty dla stolarzy, Dokumentacja CAD i Rozkroje mebli | Projektant24">
+<meta name="twitter:description" content="Projekty mebli CAD gotowe do produkcji w 3–5 dni. Żadnych błędów montażowych.">
+<meta name="twitter:image" content="https://projektant24.pl/og-image.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Projektant24",
+  "description": "Dokumentacja CAD i projekty technologiczne mebli dla zakładów stolarskich.",
+  "url": "https://projektant24.pl",
+  "telephone": "+48123456789",
+  "email": "kontakt@projektant24.pl",
+  "address": { "@type": "PostalAddress", "addressCountry": "PL" },
+  "areaServed": { "@type": "Country", "name": "Polska" },
+  "priceRange": "od 250 zł",
+  "openingHours": ["Mo-Fr 08:00-18:00", "Sa 09:00-14:00"],
+  "sameAs": ["https://www.facebook.com/projektant24"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Ile kosztuje dokumentacja CAD mebla?", "acceptedAnswer": { "@type": "Answer", "text": "Ceny zaczynają się od 250 zł za projekt mebla." } },
+    { "@type": "Question", "name": "Ile czasu trwa realizacja projektu?", "acceptedAnswer": { "@type": "Answer", "text": "Standardowo 3–5 dni roboczych od zatwierdzenia briefu." } },
+    { "@type": "Question", "name": "Co muszę dostarczyć, żeby zamówić projekt?", "acceptedAnswer": { "@type": "Answer", "text": "Wystarczą wymiary pomieszczenia i opis, co chcesz zmieścić w środku." } }
+  ]
+}
+</script>
+<link rel="stylesheet" href="style.css">
+<style>
+#hero { min-height:100vh; background:var(--black); display:flex; flex-direction:column; justify-content:center; padding:120px 80px 80px; position:relative; overflow:hidden; }
+.hero-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.035) 1px,transparent 1px); background-size:60px 60px; pointer-events:none; }
+.hero-inner { position:relative; z-index:1; max-width:1400px; display:flex; align-items:center; justify-content:space-between; gap:60px; width:100%; margin:0 auto; }
+.hero-text { flex:1; min-width:0; }
+.hero-kitchen { flex:1.5; opacity:0.85; pointer-events:none; display:flex; justify-content:flex-end; }
+.hero-kitchen svg { display:block; width:100%; max-width:850px; height:auto; }
+@media (max-width:1100px) { .hero-inner { gap:40px; } }
+@media (max-width:900px) { 
+  .hero-inner { flex-direction:column; text-align:center; }
+  .hero-kitchen { display:none; }
+}
+.hero-eyebrow { font-family:var(--f-d); font-size:12px; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; color:var(--orange); display:flex; align-items:center; gap:14px; margin-bottom:28px; }
+.hero-eyebrow::before { content:''; display:block; width:32px; height:2px; background:var(--orange); }
+.hero-title { font-family:var(--f-d); font-weight:800; font-size:clamp(42px,6.5vw,84px); line-height:0.95; letter-spacing:-0.025em; color:var(--white); margin-bottom:36px; text-wrap:balance; }
+.hero-title em { color:var(--orange); font-style:normal; display:block; }
+.hero-subtitle { font-size:20px; color:rgba(255,255,255,0.55); font-weight:300; max-width:520px; line-height:1.65; margin-bottom:52px; }
+.hero-ctas { display:flex; gap:16px; flex-wrap:wrap; align-items:center; }
+.hero-phone { display:flex; align-items:center; gap:10px; color:rgba(255,255,255,0.45); font-size:14px; }
+.hero-phone strong { color:var(--white); font-weight:600; }
+.hero-scroll { position:absolute; bottom:36px; left:80px; display:flex; align-items:center; gap:10px; color:rgba(255,255,255,0.2); font-size:11px; letter-spacing:0.15em; text-transform:uppercase; }
+.hero-scroll::after { content:''; display:block; width:40px; height:1px; background:rgba(255,255,255,0.2); }
+.stat-bar { background:var(--orange); padding:20px 80px; display:flex; justify-content:center; gap:80px; flex-wrap:wrap; }
+.stat { text-align:center; }
+.stat-num { font-family:var(--f-d); font-weight:800; font-size:36px; color:var(--white); line-height:1; }
+.stat-label { font-size:12px; color:rgba(255,255,255,0.75); letter-spacing:0.08em; margin-top:4px; text-transform:uppercase; font-weight:500; }
+#problems { background:var(--white); }
+.problems-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:2px; margin-top:52px; }
+.problem-card { padding:36px 32px; background:var(--paper); display:flex; gap:20px; align-items:flex-start; transition:background 0.2s; }
+.problem-card:hover { background:#EAE8E4; }
+.problem-icon { width:40px; height:40px; flex-shrink:0; display:flex; align-items:center; justify-content:center; background:rgba(232,98,10,0.1); border-radius:4px; }
+.problem-icon svg { width:20px; height:20px; stroke:var(--orange); fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+.problem-card h3 { font-family:var(--f-d); font-weight:700; font-size:19px; margin-bottom:8px; }
+.problem-card p { font-size:15px; color:var(--mid); line-height:1.6; }
+#why { background:var(--black); position:relative; overflow:hidden; }
+#why h2 { color:var(--white); position:relative; z-index:1; }
+.why-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:2px; position:relative; z-index:1; }
+.why-card { padding:40px 36px; border:1px solid rgba(255,255,255,0.06); background:rgba(255,255,255,0.02); }
+.why-num { font-family:var(--f-d); font-weight:800; font-size:52px; color:var(--orange); opacity:0.25; line-height:1; margin-bottom:20px; }
+.why-card h3 { font-family:var(--f-d); font-weight:700; font-size:22px; color:var(--white); margin-bottom:12px; }
+.why-card p { font-size:15px; color:rgba(255,255,255,0.4); line-height:1.7; }
+.why-quote { position:relative; z-index:1; margin-top:2px; padding:40px 36px; border-left:4px solid var(--orange); background:rgba(255,255,255,0.02); border-top:1px solid rgba(255,255,255,0.06); }
+.why-quote blockquote { font-family:var(--f-d); font-size:clamp(22px,3vw,32px); font-weight:600; color:var(--white); line-height:1.35; font-style:italic; }
+.why-quote cite { display:block; margin-top:16px; font-size:13px; color:var(--orange); font-style:normal; letter-spacing:0.08em; text-transform:uppercase; }
+#preview-3d { background:var(--white); padding:100px 80px; position:relative; overflow:hidden; }
+.preview-3d-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; max-width:1400px; margin:0 auto; }
+.preview-3d-visual { position:relative; background:var(--paper); padding:40px; border-radius:24px; display:flex; justify-content:center; }
+.preview-3d-phone { width:280px; height:560px; background:var(--black); border:12px solid #222; border-radius:40px; position:relative; overflow:hidden; box-shadow:0 30px 60px rgba(0,0,0,0.15); }
+.preview-3d-phone-screen { 
+  width:100%; height:100%; background:var(--paper); 
+  background-image:linear-gradient(rgba(0,0,0,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,0.05) 1px,transparent 1px); 
+  background-size:20px 20px;
+  display:flex; align-items:center; justify-content:center; overflow:hidden; position:relative;
+}
+.preview-3d-phone-screen img { width:100%; height:100%; object-fit:cover; position:relative; z-index:2; }
+.preview-3d-phone-screen svg { width:80%; opacity:0.3; position:absolute; z-index:1; }
+.preview-3d-badge { position:absolute; top:40px; right:-20px; background:var(--orange); color:white; padding:12px 20px; border-radius:4px; font-family:var(--f-d); font-weight:700; transform:rotate(5deg); box-shadow:0 10px 20px rgba(232,98,10,0.2); }
+.preview-3d-text h2 { margin-bottom:28px; }
+.preview-3d-features { display:flex; flex-direction:column; gap:24px; margin-top:36px; }
+.preview-3d-feature { display:flex; gap:16px; align-items:flex-start; }
+.preview-3d-feature-icon { width:24px; height:24px; background:rgba(232,98,10,0.1); border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center; margin-top:2px; }
+.preview-3d-feature-icon svg { width:14px; height:14px; stroke:var(--orange); fill:none; stroke-width:3; }
+.preview-3d-feature h3 { font-family:var(--f-d); font-size:18px; font-weight:700; margin-bottom:4px; }
+.preview-3d-feature p { font-size:15px; color:var(--mid); line-height:1.6; }
+#process { background:var(--paper); }
+.process-steps { display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:52px; position:relative; }
+.process-steps::before { content:''; position:absolute; top:28px; left:10%; right:10%; height:2px; background:linear-gradient(90deg,var(--orange),rgba(232,98,10,0.2)); }
+.process-step { padding:0 20px; position:relative; }
+.step-dot { width:56px; height:56px; background:var(--black); border-radius:50%; display:flex; align-items:center; justify-content:center; margin-bottom:20px; position:relative; z-index:1; border:3px solid var(--orange); font-family:var(--f-d); font-weight:800; font-size:20px; color:var(--orange); }
+.process-step h3 { font-family:var(--f-d); font-weight:700; font-size:18px; margin-bottom:8px; }
+.process-step p { font-size:14px; color:var(--mid); line-height:1.6; }
+#cases { background:var(--white); }
+.cases-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:2px; margin-top:52px; }
+.case-card { background:var(--paper); overflow:hidden; display:flex; flex-direction:column; transition:transform 0.2s; }
+.case-card:hover { transform:translateY(-3px); }
+.case-img { height:220px; background:var(--dark); position:relative; overflow:hidden; display:flex; align-items:center; justify-content:center; }
+.case-img-placeholder { width:100%; height:100%; background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px); background-size:30px 30px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; }
+.case-img-icon { width:48px; height:48px; stroke:rgba(255,255,255,0.15); fill:none; stroke-width:1.5; }
+.case-img-label { font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.15); }
+.case-tag { position:absolute; top:16px; left:16px; background:var(--orange); color:white; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; padding:4px 10px; }
+.case-body { padding:32px; flex:1; display:flex; flex-direction:column; gap:12px; }
+.case-title { font-family:var(--f-d); font-weight:700; font-size:22px; }
+.case-desc { font-size:14px; color:var(--mid); line-height:1.65; flex:1; }
+.case-metrics { display:flex; gap:24px; padding-top:16px; border-top:1px solid var(--light); }
+.case-metric span:first-child { display:block; font-family:var(--f-d); font-weight:700; font-size:26px; color:var(--orange); }
+.case-metric span:last-child { display:block; font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:var(--mid); margin-top:2px; }
+#cta { background:var(--paper); }
+.cta-inner { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; }
+.cta-promise { margin:32px 0; display:flex; flex-direction:column; gap:12px; }
+.cta-promise-item { display:flex; align-items:center; gap:12px; font-size:15px; color:var(--dark); }
+.cta-promise-item::before { content:''; width:20px; height:20px; background:var(--orange); flex-shrink:0; clip-path:polygon(14% 44%,0 65%,50% 100%,100% 16%,80% 0%,43% 62%); }
+.cta-form { background:var(--white); padding:40px; border-top:4px solid var(--orange); }
+.cta-form h3 { font-family:var(--f-d); font-weight:700; font-size:24px; margin-bottom:6px; }
+.cta-form-sub { font-size:14px; color:var(--mid); margin-bottom:28px; }
+.form-group { margin-bottom:18px; }
+.form-group label { display:block; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; font-weight:600; color:var(--mid); margin-bottom:6px; }
+.form-group input { width:100%; padding:12px 16px; background:var(--paper); border:1px solid var(--light); border-radius:3px; font-family:var(--f-b); font-size:15px; color:var(--black); transition:border-color 0.2s; }
+.form-group input:focus { outline:none; border-color:var(--orange); background:var(--white); }
+.form-submit { width:100%; padding:14px; background:var(--orange); color:white; border:none; cursor:pointer; font-family:var(--f-d); font-weight:700; font-size:16px; letter-spacing:0.08em; text-transform:uppercase; transition:background 0.2s; }
+.form-submit:hover { background:var(--orange-d); }
+.form-note { font-size:12px; color:var(--mid); text-align:center; margin-top:12px; }
+.wa-alt { display:flex; align-items:center; gap:12px; margin-top:20px; padding:14px 16px; background:#f0fdf4; border:1px solid #bbf7d0; border-radius:3px; text-decoration:none; transition:background 0.2s; }
+.wa-alt:hover { background:#dcfce7; }
+.wa-alt svg { width:22px; height:22px; fill:#16a34a; flex-shrink:0; }
+.wa-alt span { font-size:14px; color:#15803d; font-weight:500; }
+#opinion { background:var(--black); padding:100px 80px; overflow:hidden; }
+.opinion-slider { max-width:900px; margin:0 auto; position:relative; min-height:300px; display:flex; align-items:center; justify-content:center; }
+.opinion-slide { position:absolute; opacity:0; transition:all 0.6s ease; text-align:center; width:100%; transform:translateX(30px); pointer-events:none; }
+.opinion-slide.active { opacity:1; transform:translateX(0); pointer-events:all; }
+.opinion-stars { color:var(--orange); font-size:20px; letter-spacing:4px; margin-bottom:28px; }
+.opinion-text { font-family:var(--f-d); font-size:clamp(20px,3vw,30px); font-weight:600; color:var(--white); line-height:1.4; font-style:italic; margin-bottom:24px; }
+.opinion-author { font-size:13px; color:var(--orange); letter-spacing:0.12em; text-transform:uppercase; font-weight:700; }
+.opinion-nav { display:flex; justify-content:center; gap:12px; margin-top:48px; }
+.opinion-dot { width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,0.15); cursor:pointer; transition:background 0.3s; }
+.opinion-dot.active { background:var(--orange); width:24px; border-radius:4px; }
+@media (max-width:900px) {
+  #hero { padding:100px 24px 80px; }
+  .hero-inner { flex-direction:column; text-align:center; gap:48px; }
+  .hero-kitchen { order:-1; opacity:0.4; max-width:500px; margin:0 auto 40px; }
+  .hero-scroll { left:24px; }
+  .stat-bar { padding:20px 24px; gap:32px; }
+  .problems-grid { grid-template-columns:1fr; }
+  .why-grid { grid-template-columns:1fr; }
+  .process-steps { grid-template-columns:1fr 1fr; gap:32px; }
+  .process-steps::before { display:none; }
+  .cases-grid { grid-template-columns:1fr; }
+  .cta-inner { grid-template-columns:1fr; gap:40px; }
+  #opinion { padding:56px 24px; }
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-logo">PROJEKTANT<span>24</span></a>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html" class="active">Strona główna</a>
+    <a href="cennik.html">Cennik</a>
+    <a href="realizacje.html">Realizacje</a>
+    <a href="blog.html">Blog</a>
+    <a href="kontakt.html" class="nav-cta">ZACZNIJMY PROJEKT</a>
+  </div>
+  <div class="nav-hamburger" id="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<section id="hero" data-screen-label="01 Hero">
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-eyebrow">Dokumentacja CAD dla stolarzy</div>
+      <h1 class="hero-title">Projekty dla stolarzy, które<br><em>nie wracają do poprawek.</em></h1>
+      <p class="hero-subtitle">Zdejmujemy z Ciebie ciężar projektowy. Dostajesz dokumentację gotową do produkcji i montażu — bo każdy projekt tworzymy z myślą o tym, co może pójść źle na montażu.</p>
+      <div class="hero-ctas">
+        <a href="kontakt.html" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:white;fill:none;stroke-width:2;stroke-linecap:round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.09 6.09l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+          ZACZNIJMY PROJEKT
+        </a>
+        <div class="hero-phone">lub zadzwoń: <strong>+48 123 456 789</strong></div>
+      </div>
+    </div>
+    <div class="hero-kitchen" aria-hidden="true">
+      <svg viewBox="0 0 98 72" xmlns="http://www.w3.org/2000/svg">
+        <style>
+          .k-line { 
+            stroke: white; fill: none; stroke-linecap: round; stroke-linejoin: round; 
+            stroke-width: 0.12px; opacity: 0; 
+            stroke-dasharray: 30; stroke-dashoffset: 30;
+            animation: drawLine 0.6s ease-in-out forwards;
+          }
+          @keyframes drawLine {
+            from { opacity: 1; stroke-dashoffset: 30; }
+            to { opacity: 1; stroke-dashoffset: 0; }
+          }
+          /* Staggering delays for line-by-line effect */
+          .k-line:nth-child(10n+1) { animation-delay: 0.1s; }
+          .k-line:nth-child(10n+2) { animation-delay: 0.3s; }
+          .k-line:nth-child(10n+3) { animation-delay: 0.5s; }
+          .k-line:nth-child(10n+4) { animation-delay: 0.7s; }
+          .k-line:nth-child(10n+5) { animation-delay: 0.9s; }
+          .k-line:nth-child(10n+6) { animation-delay: 1.1s; }
+          .k-line:nth-child(10n+7) { animation-delay: 1.3s; }
+          .k-line:nth-child(10n+8) { animation-delay: 1.5s; }
+          .k-line:nth-child(10n+9) { animation-delay: 1.7s; }
+          .k-line:nth-child(10n+10) { animation-delay: 1.9s; }
+        </style>
+        <g transform="translate(0, 72) scale(1, -1)">
+          <path class="k-line" d="M 74.609,23.248 L 74.618,23.393" />
+          <path class="k-line" d="M 74.668,23.142 L 74.681,23.374" />
+          <path class="k-line" d="M 75.410,36.165 L 67.125,37.806" />
+          <path class="k-line" d="M 67.125,37.806 L 67.232,37.832" />
+          <path class="k-line" d="M 66.817,25.543 L 66.822,25.663" />
+          <path class="k-line" d="M 67.019,25.454 L 67.025,25.604" />
+          <path class="k-line" d="M 66.790,25.520 L 66.796,25.670" />
+          <path class="k-line" d="M 74.459,21.683 L 74.599,21.744" />
+          <path class="k-line" d="M 74.586,21.513 L 74.599,21.744" />
+          <path class="k-line" d="M 77.223,67.807 L 77.209,67.552" />
+          <path class="k-line" d="M 82.968,67.576 L 82.952,67.339" />
+          <path class="k-line" d="M 80.227,23.789 L 80.243,24.022" />
+          <path class="k-line" d="M 83.250,67.583 L 83.233,67.328" />
+          <path class="k-line" d="M 80.243,24.022 L 83.233,67.328" />
+          <path class="k-line" d="M 74.856,21.666 L 74.599,21.744" />
+          <path class="k-line" d="M 74.843,21.435 L 74.856,21.666" />
+          <path class="k-line" d="M 77.512,67.815 L 77.497,67.559" />
+          <path class="k-line" d="M 74.856,21.666 L 77.497,67.559" />
+          <path class="k-line" d="M 80.375,24.080 L 80.243,24.022" />
+          <path class="k-line" d="M 74.716,21.605 L 74.856,21.666" />
+          <path class="k-line" d="M 83.360,67.322 L 83.233,67.328" />
+          <path class="k-line" d="M 48.633,26.740 L 48.633,26.883" />
+          <path class="k-line" d="M 48.849,26.714 L 48.849,26.948" />
+          <path class="k-line" d="M 48.854,38.670 L 48.849,26.948" />
+          <path class="k-line" d="M 55.087,28.592 L 55.090,28.827" />
+          <path class="k-line" d="M 48.658,26.776 L 48.658,26.891" />
+          <path class="k-line" d="M 54.896,28.648 L 54.897,28.769" />
+          <path class="k-line" d="M 55.116,28.601 L 55.120,28.836" />
+          <path class="k-line" d="M 55.275,39.988 L 55.120,28.836" />
+          <path class="k-line" d="M 54.925,28.657 L 54.927,28.778" />
+          <path class="k-line" d="M 43.464,25.187 L 43.463,25.327" />
+          <path class="k-line" d="M 37.753,38.663 L 37.793,36.937" />
+          <path class="k-line" d="M 35.840,31.034 L 35.703,35.971" />
+          <path class="k-line" d="M 43.630,25.143 L 43.627,25.376" />
+          <path class="k-line" d="M 43.440,25.210 L 43.439,25.319" />
+          <path class="k-line" d="M 48.611,26.762 L 48.611,26.877" />
+          <path class="k-line" d="M 43.488,25.225 L 43.487,25.334" />
+          <path class="k-line" d="M 43.677,25.157 L 43.675,25.391" />
+          <path class="k-line" d="M 43.675,25.391 L 43.542,37.580" />
+          <path class="k-line" d="M 32.598,5.994 L 32.799,6.077" />
+          <path class="k-line" d="M 32.807,5.854 L 32.799,6.077" />
+          <path class="k-line" d="M 32.091,25.685 L 32.099,25.451" />
+          <path class="k-line" d="M 31.897,25.396 L 32.099,25.451" />
+          <path class="k-line" d="M 43.444,10.059 L 43.442,10.285" />
+          <path class="k-line" d="M 33.045,5.931 L 32.799,6.077" />
+          <path class="k-line" d="M 33.053,5.707 L 33.045,5.931" />
+          <path class="k-line" d="M 33.045,5.931 L 32.355,25.349" />
+          <path class="k-line" d="M 32.355,25.349 L 32.099,25.451" />
+          <path class="k-line" d="M 43.626,10.362 L 43.442,10.285" />
+          <path class="k-line" d="M 32.845,5.847 L 33.045,5.931" />
+          <path class="k-line" d="M 43.442,10.285 L 33.045,5.931" />
+          <path class="k-line" d="M 43.414,28.411 L 43.229,28.359" />
+          <path class="k-line" d="M 32.153,25.293 L 32.355,25.349" />
+          <path class="k-line" d="M 43.229,28.359 L 32.355,25.349" />
+          <path class="k-line" d="M 27.478,12.032 L 27.632,12.087" />
+          <path class="k-line" d="M 27.461,12.388 L 27.615,12.443" />
+          <path class="k-line" d="M 17.969,17.534 L 18.093,17.465" />
+          <path class="k-line" d="M 27.861,11.738 L 27.850,11.964" />
+          <path class="k-line" d="M 27.850,11.964 L 27.133,27.293" />
+          <path class="k-line" d="M 27.271,27.238 L 27.133,27.293" />
+          <path class="k-line" d="M 17.033,31.334 L 17.156,31.284" />
+          <path class="k-line" d="M 27.133,27.293 L 17.156,31.284" />
+          <path class="k-line" d="M 27.915,11.757 L 27.907,11.932" />
+          <path class="k-line" d="M 17.203,31.388 L 17.210,31.296" />
+          <path class="k-line" d="M 27.696,11.909 L 27.850,11.964" />
+          <path class="k-line" d="M 27.697,11.880 L 27.689,12.055" />
+          <path class="k-line" d="M 17.923,17.413 L 18.093,17.465" />
+          <path class="k-line" d="M 18.335,17.152 L 18.323,17.335" />
+          <path class="k-line" d="M 17.382,31.317 L 17.388,31.225" />
+          <path class="k-line" d="M 18.209,30.931 L 18.333,30.882" />
+          <path class="k-line" d="M 18.333,30.882 L 26.960,27.438" />
+          <path class="k-line" d="M 18.424,30.901 L 18.333,30.882" />
+          <path class="k-line" d="M 27.916,11.785 L 28.069,11.841" />
+          <path class="k-line" d="M 27.899,12.144 L 28.052,12.199" />
+          <path class="k-line" d="M 28.134,11.634 L 28.126,11.809" />
+          <path class="k-line" d="M 12.838,20.059 L 12.820,20.290" />
+          <path class="k-line" d="M 17.849,17.494 L 17.841,17.612" />
+          <path class="k-line" d="M 35.644,35.959 L 35.781,31.054" />
+          <path class="k-line" d="M 26.834,33.986 L 26.827,34.149" />
+          <path class="k-line" d="M 12.855,20.064 L 12.838,20.280" />
+          <path class="k-line" d="M 12.811,20.309 L 11.763,33.567" />
+          <path class="k-line" d="M 26.780,34.139 L 26.786,34.002" />
+          <path class="k-line" d="M 17.713,17.339 L 17.697,17.569" />
+          <path class="k-line" d="M 17.697,17.569 L 16.735,31.575" />
+          <path class="k-line" d="M 17.524,17.667 L 16.559,31.645" />
+          <path class="k-line" d="M 55.901,28.684 L 55.903,28.834" />
+          <path class="k-line" d="M 56.209,59.014 L 56.376,59.021" />
+          <path class="k-line" d="M 56.093,28.628 L 56.096,28.778" />
+          <path class="k-line" d="M 56.269,39.584 L 56.275,39.976" />
+          <path class="k-line" d="M 59.602,27.609 L 59.606,27.764" />
+          <path class="k-line" d="M 55.735,28.883 L 55.898,39.584" />
+          <path class="k-line" d="M 55.898,39.584 L 59.650,38.828" />
+          <path class="k-line" d="M 59.389,27.582 L 59.394,27.817" />
+          <path class="k-line" d="M 59.650,38.828 L 59.394,27.817" />
+          <path class="k-line" d="M 55.908,28.701 L 55.910,28.832" />
+          <path class="k-line" d="M 59.650,38.828 L 59.831,38.868" />
+          <path class="k-line" d="M 57.945,39.646 L 56.982,39.441" />
+          <path class="k-line" d="M 60.058,48.464 L 59.842,39.346" />
+          <path class="k-line" d="M 55.879,65.372 L 56.046,65.370" />
+          <path class="k-line" d="M 55.339,28.862 L 55.506,28.913" />
+          <path class="k-line" d="M 56.049,65.624 L 56.046,65.370" />
+          <path class="k-line" d="M 55.503,28.677 L 55.506,28.913" />
+          <path class="k-line" d="M 56.257,65.627 L 56.253,65.373" />
+          <path class="k-line" d="M 55.694,28.622 L 55.698,28.857" />
+          <path class="k-line" d="M 56.253,65.373 L 55.698,28.857" />
+          <path class="k-line" d="M 56.086,65.375 L 56.253,65.373" />
+          <path class="k-line" d="M 56.253,65.373 L 56.046,65.370" />
+          <path class="k-line" d="M 68.422,65.528 L 68.622,65.530" />
+          <path class="k-line" d="M 68.622,65.530 L 77.018,65.641" />
+          <path class="k-line" d="M 76.881,65.644 L 77.018,65.641" />
+          <path class="k-line" d="M 68.473,65.533 L 68.622,65.530" />
+          <path class="k-line" d="M 68.143,58.556 L 68.342,58.549" />
+          <path class="k-line" d="M 68.221,65.529 L 68.370,65.527" />
+          <path class="k-line" d="M 77.071,65.611 L 76.652,58.238" />
+          <path class="k-line" d="M 60.722,65.426 L 68.120,65.524" />
+          <path class="k-line" d="M 67.970,65.526 L 68.120,65.524" />
+          <path class="k-line" d="M 60.561,65.428 L 60.722,65.426" />
+          <path class="k-line" d="M 60.563,58.856 L 67.848,58.568" />
+          <path class="k-line" d="M 67.698,58.561 L 67.848,58.568" />
+          <path class="k-line" d="M 60.402,58.848 L 60.563,58.856" />
+          <path class="k-line" d="M 60.338,65.425 L 60.499,65.423" />
+          <path class="k-line" d="M 56.517,65.375 L 56.684,65.372" />
+          <path class="k-line" d="M 56.309,65.372 L 56.475,65.369" />
+          <path class="k-line" d="M 43.411,28.665 L 43.226,28.614" />
+          <path class="k-line" d="M 32.144,25.568 L 32.345,25.623" />
+          <path class="k-line" d="M 43.226,28.614 L 32.345,25.623" />
+          <path class="k-line" d="M 43.388,28.561 L 43.226,28.614" />
+          <path class="k-line" d="M 25.911,34.288 L 26.047,34.244" />
+          <path class="k-line" d="M 32.491,25.566 L 32.345,25.623" />
+          <path class="k-line" d="M 15.701,32.210 L 15.821,32.163" />
+          <path class="k-line" d="M 32.345,25.623 L 15.821,32.163" />
+          <path class="k-line" d="M 32.501,25.291 L 32.355,25.349" />
+          <path class="k-line" d="M 15.717,31.980 L 15.837,31.932" />
+          <path class="k-line" d="M 43.391,28.306 L 43.229,28.359" />
+          <path class="k-line" d="M 26.257,34.286 L 26.047,34.244" />
+          <path class="k-line" d="M 15.960,32.119 L 15.839,32.166" />
+          <path class="k-line" d="M 10.269,34.370 L 10.381,34.326" />
+          <path class="k-line" d="M 15.839,32.166 L 10.381,34.326" />
+          <path class="k-line" d="M 10.381,34.326 L 10.399,34.110" />
+          <path class="k-line" d="M 10.148,34.283 L 10.381,34.326" />
+          <path class="k-line" d="M 24.495,36.911 L 24.282,36.872" />
+          <path class="k-line" d="M 10.165,34.067 L 10.399,34.110" />
+          <path class="k-line" d="M 10.286,34.155 L 10.399,34.110" />
+          <path class="k-line" d="M 15.630,31.890 L 15.837,31.932" />
+          <path class="k-line" d="M 36.923,39.187 L 37.118,39.223" />
+          <path class="k-line" d="M 22.852,37.011 L 23.067,37.050" />
+          <path class="k-line" d="M 23.067,37.050 L 23.057,37.245" />
+          <path class="k-line" d="M 22.842,37.207 L 23.057,37.245" />
+          <path class="k-line" d="M 36.031,39.569 L 35.835,39.534" />
+          <path class="k-line" d="M 23.057,37.245 L 35.835,39.534" />
+          <path class="k-line" d="M 22.936,37.090 L 23.067,37.050" />
+          <path class="k-line" d="M 23.884,36.799 L 23.067,37.050" />
+          <path class="k-line" d="M 24.416,36.831 L 24.282,36.872" />
+          <path class="k-line" d="M 22.925,37.285 L 23.057,37.245" />
+          <path class="k-line" d="M 24.282,36.872 L 23.057,37.245" />
+          <path class="k-line" d="M 37.271,39.186 L 37.118,39.223" />
+          <path class="k-line" d="M 35.684,39.571 L 35.835,39.534" />
+          <path class="k-line" d="M 37.118,39.223 L 35.835,39.534" />
+          <path class="k-line" d="M 31.478,37.676 L 37.937,38.883" />
+          <path class="k-line" d="M 38.158,38.882 L 42.258,37.883" />
+          <path class="k-line" d="M 38.162,38.698 L 41.938,37.772" />
+          <path class="k-line" d="M 37.937,38.883 L 37.941,38.699" />
+          <path class="k-line" d="M 38.158,38.882 L 38.162,38.698" />
+          <path class="k-line" d="M 51.098,67.026 L 51.097,66.852" />
+          <path class="k-line" d="M 49.349,66.815 L 49.526,66.810" />
+          <path class="k-line" d="M 49.306,41.459 L 49.483,41.491" />
+          <path class="k-line" d="M 49.526,67.065 L 49.526,66.810" />
+          <path class="k-line" d="M 49.526,66.810 L 49.483,41.491" />
+          <path class="k-line" d="M 49.713,67.070 L 49.712,66.815" />
+          <path class="k-line" d="M 49.536,66.820 L 49.712,66.815" />
+          <path class="k-line" d="M 51.284,67.031 L 51.283,66.857" />
+          <path class="k-line" d="M 49.483,41.424 L 49.659,41.457" />
+          <path class="k-line" d="M 55.558,40.319 L 55.676,40.343" />
+          <path class="k-line" d="M 49.739,59.272 L 49.915,59.278" />
+          <path class="k-line" d="M 49.694,41.463 L 49.857,41.493" />
+          <path class="k-line" d="M 49.732,59.240 L 55.951,58.992" />
+          <path class="k-line" d="M 49.712,49.690 L 55.803,48.936" />
+          <path class="k-line" d="M 49.944,65.282 L 50.117,65.285" />
+          <path class="k-line" d="M 50.117,65.285 L 56.046,65.363" />
+          <path class="k-line" d="M 55.925,65.366 L 56.046,65.364" />
+          <path class="k-line" d="M 49.924,67.066 L 49.923,66.821" />
+          <path class="k-line" d="M 77.089,65.648 L 77.197,67.550" />
+          <path class="k-line" d="M 49.733,67.071 L 49.733,66.816" />
+          <path class="k-line" d="M 74.644,22.538 L 55.605,28.199" />
+          <path class="k-line" d="M 55.602,27.964 L 55.605,28.199" />
+          <path class="k-line" d="M 55.415,28.019 L 55.416,28.140" />
+          <path class="k-line" d="M 59.806,27.549 L 59.810,27.705" />
+          <path class="k-line" d="M 65.777,47.667 L 65.638,43.747" />
+          <path class="k-line" d="M 65.561,41.580 L 65.328,35.031" />
+          <path class="k-line" d="M 66.563,25.586 L 66.568,25.737" />
+          <path class="k-line" d="M 67.270,47.439 L 67.415,47.462" />
+          <path class="k-line" d="M 60.314,48.345 L 60.316,48.432" />
+          <path class="k-line" d="M 67.029,41.270 L 67.175,41.302" />
+          <path class="k-line" d="M 60.179,42.776 L 67.187,41.592" />
+          <path class="k-line" d="M 65.611,43.804 L 65.458,43.775" />
+          <path class="k-line" d="M 65.458,43.775 L 60.179,42.776" />
+          <path class="k-line" d="M 67.041,41.559 L 67.187,41.590" />
+          <path class="k-line" d="M 60.173,42.503 L 60.179,42.776" />
+          <path class="k-line" d="M 59.959,33.664 L 66.813,32.000" />
+          <path class="k-line" d="M 65.305,35.112 L 65.151,35.070" />
+          <path class="k-line" d="M 65.151,35.070 L 59.959,33.664" />
+          <path class="k-line" d="M 59.596,33.868 L 59.591,33.630" />
+          <path class="k-line" d="M 59.591,33.630 L 66.840,31.863" />
+          <path class="k-line" d="M 66.591,25.494 L 66.600,25.727" />
+          <path class="k-line" d="M 66.840,31.863 L 66.600,25.727" />
+          <path class="k-line" d="M 66.766,25.557 L 66.771,25.678" />
+          <path class="k-line" d="M 59.626,27.630 L 59.629,27.758" />
+          <path class="k-line" d="M 59.775,33.916 L 59.769,33.678" />
+          <path class="k-line" d="M 59.917,48.235 L 59.923,48.480" />
+          <path class="k-line" d="M 67.428,47.308 L 67.438,47.553" />
+          <path class="k-line" d="M 60.101,48.260 L 60.105,48.458" />
+          <path class="k-line" d="M 66.642,25.479 L 66.651,25.700" />
+          <path class="k-line" d="M 66.927,37.845 L 67.040,37.822" />
+          <path class="k-line" d="M 67.040,37.822 L 67.125,37.806" />
+          <path class="k-line" d="M 66.929,37.892 L 67.041,37.870" />
+          <path class="k-line" d="M 67.041,37.870 L 67.127,37.853" />
+          <path class="k-line" d="M 67.127,37.853 L 67.232,37.832" />
+          <path class="k-line" d="M 67.232,37.832 L 75.413,36.216" />
+          <path class="k-line" d="M 76.648,58.166 L 67.936,58.513" />
+          <path class="k-line" d="M 67.936,58.513 L 68.051,58.519" />
+          <path class="k-line" d="M 67.945,58.551 L 68.052,58.556" />
+          <path class="k-line" d="M 74.599,21.744 L 74.644,22.538" />
+          <path class="k-line" d="M 77.072,67.557 L 77.197,67.552" />
+          <path class="k-line" d="M 77.497,67.559 L 77.381,67.556" />
+          <path class="k-line" d="M 77.381,67.556 L 77.209,67.552" />
+          <path class="k-line" d="M 80.243,24.022 L 79.979,23.906" />
+          <path class="k-line" d="M 79.979,23.906 L 74.856,21.666" />
+          <path class="k-line" d="M 77.381,67.564 L 77.497,67.559" />
+          <path class="k-line" d="M 83.233,67.328 L 82.952,67.339" />
+          <path class="k-line" d="M 82.952,67.339 L 77.497,67.559" />
+          <path class="k-line" d="M 48.832,26.799 L 48.832,26.943" />
+          <path class="k-line" d="M 48.849,26.948 L 48.976,26.987" />
+          <path class="k-line" d="M 55.090,28.845 L 55.245,39.982" />
+          <path class="k-line" d="M 43.389,25.304 L 43.265,25.267" />
+          <path class="k-line" d="M 43.493,37.570 L 43.627,25.408" />
+          <path class="k-line" d="M 48.802,26.700 L 48.802,26.919" />
+          <path class="k-line" d="M 48.805,38.660 L 48.802,26.964" />
+          <path class="k-line" d="M 32.799,6.077 L 32.685,9.239" />
+          <path class="k-line" d="M 32.685,9.239 L 32.099,25.451" />
+          <path class="k-line" d="M 43.265,25.267 L 43.229,28.359" />
+          <path class="k-line" d="M 18.081,17.640 L 18.246,17.690" />
+          <path class="k-line" d="M 27.127,27.433 L 27.132,27.331" />
+          <path class="k-line" d="M 17.147,31.410 L 17.153,31.318" />
+          <path class="k-line" d="M 18.109,17.235 L 18.103,17.316" />
+          <path class="k-line" d="M 18.103,17.316 L 18.093,17.465" />
+          <path class="k-line" d="M 27.132,27.331 L 26.966,27.397" />
+          <path class="k-line" d="M 18.160,17.251 L 18.155,17.332" />
+          <path class="k-line" d="M 18.155,17.332 L 18.148,17.434" />
+          <path class="k-line" d="M 17.646,17.560 L 17.527,17.627" />
+          <path class="k-line" d="M 12.704,20.355 L 12.794,20.304" />
+          <path class="k-line" d="M 12.818,20.305 L 11.771,33.564" />
+          <path class="k-line" d="M 17.538,17.400 L 17.530,17.519" />
+          <path class="k-line" d="M 17.530,17.519 L 17.522,17.630" />
+          <path class="k-line" d="M 17.520,17.666 L 16.554,31.647" />
+          <path class="k-line" d="M 26.816,34.387 L 26.825,34.185" />
+          <path class="k-line" d="M 12.607,20.231 L 12.812,20.288" />
+          <path class="k-line" d="M 12.829,20.078 L 12.812,20.288" />
+          <path class="k-line" d="M 12.581,20.246 L 12.794,20.304" />
+          <path class="k-line" d="M 18.078,17.684 L 17.841,17.612" />
+          <path class="k-line" d="M 17.841,17.612 L 17.697,17.569" />
+          <path class="k-line" d="M 17.697,17.569 L 17.566,17.643" />
+          <path class="k-line" d="M 17.540,17.437 L 17.534,17.520" />
+          <path class="k-line" d="M 17.301,17.600 L 17.480,17.654" />
+          <path class="k-line" d="M 56.072,39.624 L 56.078,40.015" />
+          <path class="k-line" d="M 60.183,58.857 L 60.304,58.863" />
+          <path class="k-line" d="M 59.399,27.668 L 59.402,27.815" />
+          <path class="k-line" d="M 55.731,28.647 L 55.734,28.868" />
+          <path class="k-line" d="M 59.829,38.792 L 59.650,38.828" />
+          <path class="k-line" d="M 59.652,38.904 L 59.650,38.828" />
+          <path class="k-line" d="M 59.566,27.639 L 59.569,27.766" />
+          <path class="k-line" d="M 60.018,38.831 L 59.869,38.861" />
+          <path class="k-line" d="M 56.079,39.622 L 56.269,39.584" />
+          <path class="k-line" d="M 55.898,39.584 L 56.072,39.621" />
+          <path class="k-line" d="M 59.527,38.929 L 59.653,38.958" />
+          <path class="k-line" d="M 56.078,40.015 L 55.905,40.050" />
+          <path class="k-line" d="M 59.875,48.486 L 59.662,39.307" />
+          <path class="k-line" d="M 60.030,39.309 L 59.880,39.339" />
+          <path class="k-line" d="M 59.670,39.309 L 59.842,39.346" />
+          <path class="k-line" d="M 60.164,58.826 L 60.303,58.832" />
+          <path class="k-line" d="M 56.195,58.980 L 56.375,58.988" />
+          <path class="k-line" d="M 55.698,28.857 L 55.616,28.881" />
+          <path class="k-line" d="M 55.616,28.881 L 55.506,28.913" />
+          <path class="k-line" d="M 55.530,28.806 L 55.615,28.832" />
+          <path class="k-line" d="M 55.615,28.832 L 55.698,28.857" />
+          <path class="k-line" d="M 68.348,58.548 L 76.596,58.223" />
+          <path class="k-line" d="M 67.913,58.331 L 67.920,58.513" />
+          <path class="k-line" d="M 68.204,65.749 L 68.195,65.530" />
+          <path class="k-line" d="M 76.638,57.988 L 76.648,58.166" />
+          <path class="k-line" d="M 56.684,65.372 L 60.269,65.420" />
+          <path class="k-line" d="M 60.116,65.422 L 60.269,65.420" />
+          <path class="k-line" d="M 56.376,59.036 L 56.196,59.043" />
+          <path class="k-line" d="M 56.296,65.594 L 56.292,65.372" />
+          <path class="k-line" d="M 56.292,65.340 L 56.475,65.343" />
+          <path class="k-line" d="M 15.821,32.163 L 15.837,31.944" />
+          <path class="k-line" d="M 26.047,34.244 L 15.839,32.166" />
+          <path class="k-line" d="M 10.381,34.326 L 23.884,36.799" />
+          <path class="k-line" d="M 23.884,36.799 L 24.282,36.872" />
+          <path class="k-line" d="M 11.771,33.564 L 15.837,31.944" />
+          <path class="k-line" d="M 37.118,39.223 L 49.483,41.488" />
+          <path class="k-line" d="M 35.471,36.520 L 31.762,37.536" />
+          <path class="k-line" d="M 37.793,36.937 L 35.713,36.519" />
+          <path class="k-line" d="M 31.762,37.536 L 37.753,38.663" />
+          <path class="k-line" d="M 37.753,38.663 L 37.941,38.699" />
+          <path class="k-line" d="M 49.712,66.815 L 49.709,65.285" />
+          <path class="k-line" d="M 49.709,65.285 L 49.659,41.457" />
+          <path class="k-line" d="M 49.659,41.457 L 49.492,41.489" />
+          <path class="k-line" d="M 50.104,59.240 L 55.952,59.008" />
+          <path class="k-line" d="M 49.732,59.240 L 49.915,59.247" />
+          <path class="k-line" d="M 55.676,40.355 L 50.034,41.458" />
+          <path class="k-line" d="M 49.896,49.711 L 50.071,49.690" />
+          <path class="k-line" d="M 49.712,49.690 L 49.891,49.711" />
+          <path class="k-line" d="M 50.104,59.271 L 55.952,59.040" />
+          <path class="k-line" d="M 49.755,65.284 L 49.899,65.282" />
+          <path class="k-line" d="M 49.915,59.292 L 49.732,59.300" />
+          <path class="k-line" d="M 49.745,65.254 L 49.919,65.257" />
+          <path class="k-line" d="M 77.395,67.798 L 77.381,67.564" />
+          <path class="k-line" d="M 77.074,65.394 L 77.087,65.610" />
+          <path class="k-line" d="M 77.212,67.805 L 77.197,67.552" />
+          <path class="k-line" d="M 49.745,65.285 L 56.046,65.369" />
+          <path class="k-line" d="M 49.729,65.031 L 49.729,65.254" />
+          <path class="k-line" d="M 49.730,65.559 L 49.729,65.285" />
+          <path class="k-line" d="M 55.605,28.199 L 55.416,28.140" />
+          <path class="k-line" d="M 55.416,28.140 L 43.275,24.403" />
+          <path class="k-line" d="M 55.615,28.832 L 55.605,28.199" />
+          <path class="k-line" d="M 60.314,48.345 L 65.777,47.667" />
+          <path class="k-line" d="M 65.777,47.667 L 67.416,47.464" />
+          <path class="k-line" d="M 60.173,42.503 L 65.561,41.580" />
+          <path class="k-line" d="M 65.561,41.580 L 67.175,41.304" />
+          <path class="k-line" d="M 67.261,43.497 L 65.638,43.747" />
+          <path class="k-line" d="M 65.638,43.747 L 65.458,43.775" />
+          <path class="k-line" d="M 59.798,33.621 L 59.897,33.647" />
+          <path class="k-line" d="M 66.917,34.678 L 65.328,35.031" />
+          <path class="k-line" d="M 59.769,33.678 L 59.897,33.647" />
+          <path class="k-line" d="M 59.591,33.630 L 59.708,33.662" />
+          <path class="k-line" d="M 60.058,48.464 L 59.923,48.480" />
+          <path class="k-line" d="M 60.164,58.838 L 60.303,58.832" />
+          <path class="k-line" d="M 67.936,58.529 L 68.051,58.524" />
+          <path class="k-line" d="M 60.164,58.822 L 60.303,58.828" />
+          <path class="k-line" d="M 66.822,25.663 L 66.900,25.640" />
+          <path class="k-line" d="M 66.900,25.640 L 67.025,25.604" />
+          <path class="k-line" d="M 67.937,58.530 L 68.051,58.526" />
+          <path class="k-line" d="M 48.979,26.988 L 54.897,28.769" />
+          <path class="k-line" d="M 43.490,37.793 L 43.493,37.602" />
+          <path class="k-line" d="M 48.805,38.875 L 48.805,38.691" />
+          <path class="k-line" d="M 18.148,17.434 L 18.268,17.366" />
+          <path class="k-line" d="M 18.323,17.335 L 27.632,12.087" />
+          <path class="k-line" d="M 18.081,17.640 L 18.090,17.511" />
+          <path class="k-line" d="M 17.388,31.225 L 17.210,31.296" />
+          <path class="k-line" d="M 28.126,11.809 L 32.685,9.239" />
+          <path class="k-line" d="M 35.638,36.195 L 35.643,35.993" />
+          <path class="k-line" d="M 59.869,38.861 L 59.880,39.339" />
+          <path class="k-line" d="M 59.880,39.339 L 60.097,48.459" />
+          <path class="k-line" d="M 59.569,27.766 L 59.463,27.797" />
+          <path class="k-line" d="M 59.662,39.307 L 57.945,39.646" />
+          <path class="k-line" d="M 57.945,39.646 L 56.275,39.976" />
+          <path class="k-line" d="M 56.275,39.976 L 56.085,40.014" />
+          <path class="k-line" d="M 56.586,58.980 L 60.116,58.840" />
+          <path class="k-line" d="M 68.343,58.565 L 68.123,58.574" />
+          <path class="k-line" d="M 60.507,65.395 L 60.721,65.398" />
+          <path class="k-line" d="M 60.304,58.881 L 60.166,58.887" />
+          <path class="k-line" d="M 56.582,59.028 L 56.383,59.036" />
+          <path class="k-line" d="M 56.482,65.343 L 56.683,65.345" />
+          <path class="k-line" d="M 16.554,31.647 L 15.837,31.932" />
+          <path class="k-line" d="M 35.576,36.491 L 35.487,36.516" />
+          <path class="k-line" d="M 31.342,37.651 L 31.426,37.628" />
+          <path class="k-line" d="M 35.576,36.491 L 35.693,36.515" />
+          <path class="k-line" d="M 50.072,49.703 L 49.896,49.724" />
+          <path class="k-line" d="M 49.857,41.493 L 49.694,41.525" />
+          <path class="k-line" d="M 55.952,59.055 L 50.099,59.285" />
+          <path class="k-line" d="M 50.099,59.285 L 49.920,59.292" />
+          <path class="k-line" d="M 50.117,65.285 L 56.046,65.364" />
+          <path class="k-line" d="M 66.917,34.678 L 67.040,37.822" />
+          <path class="k-line" d="M 60.311,48.432 L 60.105,48.458" />
+          <path class="k-line" d="M 66.892,31.850 L 66.652,25.746" />
+          <path class="k-line" d="M 66.671,25.707 L 66.771,25.678" />
+          <path class="k-line" d="M 67.025,25.604 L 74.497,23.428" />
+          <path class="k-line" d="M 74.497,23.428 L 74.618,23.393" />
+          <path class="k-line" d="M 67.936,58.512 L 67.507,47.564" />
+          <path class="k-line" d="M 74.692,23.379 L 75.420,36.163" />
+          <path class="k-line" d="M 26.961,27.399 L 18.336,30.846" />
+          <path class="k-line" d="M 18.336,30.846 L 17.388,31.225" />
+          <path class="k-line" d="M 59.394,27.817 L 59.260,27.856" />
+          <path class="k-line" d="M 59.260,27.856 L 56.096,28.778" />
+          <path class="k-line" d="M 56.096,28.778 L 55.952,28.819" />
+          <path class="k-line" d="M 56.269,39.584 L 56.982,39.441" />
+          <path class="k-line" d="M 56.982,39.441 L 59.527,38.929" />
+          <path class="k-line" d="M 59.527,38.929 L 59.652,38.904" />
+          <path class="k-line" d="M 55.674,40.273 L 55.672,40.099" />
+          <path class="k-line" d="M 76.597,58.240 L 68.343,58.565" />
+          <path class="k-line" d="M 68.381,65.498 L 68.621,65.501" />
+          <path class="k-line" d="M 60.563,58.871 L 60.353,58.879" />
+          <path class="k-line" d="M 43.226,28.614 L 35.840,31.034" />
+          <path class="k-line" d="M 42.365,37.857 L 42.265,37.838" />
+          <path class="k-line" d="M 49.935,65.257 L 50.117,65.259" />
+          <path class="k-line" d="M 50.117,65.259 L 56.045,65.336" />
+          <path class="k-line" d="M 59.569,27.775 L 59.478,27.802" />
+          <path class="k-line" d="M 59.958,33.633 L 66.756,31.980" />
+          <path class="k-line" d="M 67.419,47.555 L 60.316,48.432" />
+          <path class="k-line" d="M 60.562,58.822 L 67.847,58.532" />
+          <path class="k-line" d="M 68.621,65.501 L 77.016,65.610" />
+          <path class="k-line" d="M 35.781,31.054 L 26.834,33.986" />
+          <path class="k-line" d="M 27.127,27.433 L 26.961,27.499" />
+          <path class="k-line" d="M 16.735,31.575 L 16.559,31.645" />
+          <path class="k-line" d="M 26.825,34.185 L 35.574,35.978" />
+          <path class="k-line" d="M 67.416,47.464 L 67.419,47.555" />
+          <path class="k-line" d="M 66.443,25.773 L 59.810,27.705" />
+          <path class="k-line" d="M 55.951,58.992 L 55.803,48.996" />
+          <path class="k-line" d="M 55.803,48.936 L 55.676,40.355" />
+          <path class="k-line" d="M 26.957,27.501 L 18.424,30.901" />
+          <path class="k-line" d="M 35.703,36.005 L 43.422,37.587" />
+          <path class="k-line" d="M 67.041,37.870 L 67.175,41.302" />
+          <path class="k-line" d="M 59.810,27.705 L 59.682,27.742" />
+          <path class="k-line" d="M 75.424,36.219 L 76.674,58.165" />
+          <path class="k-line" d="M 18.424,30.901 L 18.329,30.939" />
+          <path class="k-line" d="M 67.175,41.304 L 67.187,41.590" />
+          <path class="k-line" d="M 67.187,41.592 L 67.261,43.497" />
+          <path class="k-line" d="M 18.329,30.939 L 17.382,31.317" />
+          <path class="k-line" d="M 67.261,43.497 L 67.415,47.462" />
+          <path class="k-line" d="M 17.147,31.410 L 16.735,31.575" />
+          <path class="k-line" d="M 17.382,31.317 L 17.203,31.388" />
+          <path class="k-line" d="M 43.542,37.612 L 48.734,38.676" />
+          <path class="k-line" d="M 56.045,65.336 L 55.952,59.055" />
+          <path class="k-line" d="M 48.854,38.701 L 55.173,39.996" />
+          <path class="k-line" d="M 76.678,58.240 L 77.098,65.610" />
+          <path class="k-line" d="M 77.100,65.649 L 77.209,67.550" />
+          <path class="k-line" d="M 55.276,40.017 L 55.672,40.099" />
+          <path class="k-line" d="M 76.596,58.223 L 76.459,58.215" />
+          <path class="k-line" d="M 68.342,58.549 L 68.193,58.541" />
+          <path class="k-line" d="M 67.130,37.932 L 67.506,47.545" />
+          <path class="k-line" d="M 66.568,25.737 L 66.443,25.773" />
+          <path class="k-line" d="M 67.125,37.806 L 66.895,31.947" />
+          <path class="k-line" d="M 48.778,26.927 L 48.658,26.891" />
+          <path class="k-line" d="M 55.120,28.836 L 55.507,28.953" />
+          <path class="k-line" d="M 55.090,28.827 L 54.927,28.778" />
+          <path class="k-line" d="M 43.675,25.391 L 48.611,26.877" />
+          <path class="k-line" d="M 43.605,25.370 L 43.487,25.334" />
+          <path class="k-line" d="M 43.229,28.359 L 43.226,28.614" />
+          <path class="k-line" d="M 27.907,11.932 L 28.069,11.841" />
+          <path class="k-line" d="M 27.850,11.964 L 27.689,12.055" />
+          <path class="k-line" d="M 60.117,58.873 L 59.964,58.866" />
+          <path class="k-line" d="M 56.581,59.013 L 56.415,59.006" />
+          <path class="k-line" d="M 55.898,39.584 L 55.905,40.050" />
+          <path class="k-line" d="M 56.196,59.043 L 56.292,65.340" />
+          <path class="k-line" d="M 59.831,38.841 L 59.841,39.271" />
+          <path class="k-line" d="M 60.351,58.830 L 60.562,58.822" />
+          <path class="k-line" d="M 67.849,58.585 L 60.563,58.871" />
+          <path class="k-line" d="M 68.118,65.494 L 60.721,65.398" />
+          <path class="k-line" d="M 60.722,65.426 L 60.508,65.423" />
+          <path class="k-line" d="M 60.563,58.856 L 60.352,58.864" />
+          <path class="k-line" d="M 67.938,58.565 L 68.052,58.560" />
+          <path class="k-line" d="M 60.117,58.889 L 56.582,59.028" />
+          <path class="k-line" d="M 60.164,58.822 L 59.923,48.480" />
+          <path class="k-line" d="M 60.268,65.392 L 56.683,65.345" />
+          <path class="k-line" d="M 56.684,65.372 L 56.482,65.370" />
+          <path class="k-line" d="M 56.581,59.013 L 56.383,59.021" />
+          <path class="k-line" d="M 55.905,40.050 L 56.195,58.980" />
+          <path class="k-line" d="M 60.317,65.393 L 60.458,65.395" />
+          <path class="k-line" d="M 55.952,59.036 L 55.831,59.031" />
+          <path class="k-line" d="M 50.099,59.271 L 49.924,59.264" />
+          <path class="k-line" d="M 50.034,41.458 L 49.872,41.428" />
+          <path class="k-line" d="M 49.712,49.690 L 49.694,41.525" />
+          <path class="k-line" d="M 49.732,59.300 L 49.745,65.254" />
+          <path class="k-line" d="M 50.099,59.271 L 49.920,59.278" />
+          <path class="k-line" d="M 49.732,59.240 L 49.712,49.747" />
+          <path class="k-line" d="M 49.712,66.815 L 49.526,66.810" />
+          <path class="k-line" d="M 60.166,58.891 L 60.317,65.391" />
+          <path class="k-line" d="M 60.323,65.647 L 60.318,65.420" />
+          <path class="k-line" d="M 49.941,65.287 L 50.117,65.285" />
+        </g>
+      </svg>
+    </div>
+  </div>
+  <div class="hero-scroll">Przewiń w dół</div>
+</section>
+
+<div class="stat-bar" data-screen-label="Stats">
+  <div class="stat"><div class="stat-num">150+</div><div class="stat-label">Zrealizowanych projektów</div></div>
+  <div class="stat"><div class="stat-num">3–5 dni</div><div class="stat-label">Standardowy czas realizacji</div></div>
+  <div class="stat"><div class="stat-num">0%</div><div class="stat-label">Błędów na montażu</div></div>
+</div>
+
+<section id="problems">
+  <div class="section-label">Twoje wyzwania</div>
+  <h2>Koniec z poprawkami<br>na montażu.</h2>
+
+  <div class="problems-grid">
+    <div class="problem-card"><div class="problem-icon"><svg><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><div><h3>Brak czasu na życie</h3><p>Zamiast spędzać wieczory z rodziną, siedzisz nad rysunkami i poprawkami.</p></div></div>
+    <div class="problem-card"><div class="problem-icon"><svg><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg></div><div><h3>Koszty błędów</h3><p>Jedna źle docięta formatka potrafi położyć zysk z całego zlecenia.</p></div></div>
+    <div class="problem-card"><div class="problem-icon"><svg><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div><div><h3>Stres przed montażem</h3><p>Zastanawiasz się, czy wszystko pasuje i czy nie zapomniałeś o detalu, który zablokuje montaż.</p></div></div>
+    <div class="problem-card"><div class="problem-icon"><svg><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg></div><div><h3>Błędy w zamówieniach</h3><p>Ręczne listy cięcia to ryzyko pomyłek przy zamawianiu drogich materiałów i okuć.</p></div></div>
+  </div>
+</section>
+
+<section id="why" data-screen-label="03 Dlaczego praktyk">
+  <div class="hero-grid"></div>
+  <div class="section-label">Dla kogo projektujemy?</div>
+  <h2>Projekty techniczne dla stolarzy —<br>znamy ten ból od środka.</h2>
+  <p class="lead" style="color:rgba(255,255,255,0.45);position:relative;z-index:1">Pracowaliśmy na hali produkcyjnej i przy montażach. Wiemy, co potrafi kosztować jedna źle wyliczona formatka.</p>
+  <div class="why-grid">
+    <div class="why-card"><div class="why-num">01</div><h3>Mentalny test montażowy</h3><p>Każdy projekt przechodzi przez nasze ręce dwa razy — raz gdy go tworzymy, raz gdy mentalnie idziemy z nim na montaż.</p></div>
+    <div class="why-card"><div class="why-num">02</div><h3>Dokumentacja gotowa do cięcia</h3><p>Dostajesz nie tylko rysunki — ale kompletne zestawienia elementów, rozwinięcia oklein i instrukcję montażu.</p></div>
+    <div class="why-card"><div class="why-num">03</div><h3>Partner, nie zleceniobiorca</h3><p>Jeśli widzimy w projekcie błąd lub lepsze rozwiązanie — piszemy o tym wprost, zanim puścimy rysunki do produkcji.</p></div>
+    <div class="why-card"><div class="why-num">04</div><h3>Podgląd 3D online</h3><p>Dostajesz link do interaktywnego projektu 3D. Możesz go pokazać klientowi zdalnie lub wysłać mu link do samodzielnego podglądu.</p></div>
+  </div>
+  <div class="why-quote">
+    <blockquote>"Twój projekt musi przeżyć kontakt z rzeczywistością — nie tylko z ekranem."</blockquote>
+    <cite>Nasza zasada nr 1</cite>
+  </div>
+</section>
+
+<section id="preview-3d">
+  <div class="preview-3d-grid">
+    <div class="preview-3d-visual">
+      <div class="preview-3d-phone">
+        <div class="preview-3d-phone-screen">
+          <!-- PODMIEŃ PLIK: Aby wstawić swój projekt, zapisz go jako 'projekt-3d.png' w tym samym folderze co index.html -->
+          <img src="projekt-3d.png" alt="Mój projekt 3D" onerror="this.style.display='none'">
+          
+          <!-- Symbol mebla (zostaje jako tło/fallback gdyby nie było obrazka) -->
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="position:absolute; z-index:0;">
+            <path d="M20 20 L80 20 L80 80 L20 80 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M20 20 L40 10 L100 10 L80 20" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M100 10 L100 70 L80 80" fill="none" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div>
+      </div>
+      <div class="preview-3d-badge">NOWOŚĆ</div>
+    </div>
+    <div class="preview-3d-text">
+      <div class="section-label">Nowoczesny warsztat</div>
+      <h2>Projekt 3D<br>w Twojej kieszeni.</h2>
+      <p class="lead">Zapomnij o drukowaniu wizualizacji. Każdy nasz projekt techniczny możesz otworzyć jako interaktywny model 3D na dowolnym urządzeniu.</p>
+      
+      <div class="preview-3d-features">
+        <div class="preview-3d-feature">
+          <div class="preview-3d-feature-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+          <div>
+            <h3>Bez instalacji aplikacji</h3>
+            <p>Klikasz w link i projekt otwiera się w przeglądarce telefonu lub tabletu. Działa błyskawicznie.</p>
+          </div>
+        </div>
+        <div class="preview-3d-feature">
+          <div class="preview-3d-feature-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+          <div>
+            <h3>Link dla Twojego klienta</h3>
+            <p>Możesz wysłać link klientowi, aby sam mógł "pochodzić" po swojej nowej kuchni przed montażem.</p>
+          </div>
+        </div>
+        <div class="preview-3d-feature">
+          <div class="preview-3d-feature-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+          <div>
+            <h3>Detale widoczne na budowie</h3>
+            <p>Masz wątpliwość przy montażu? Obracasz model, robisz przekrój i widzisz każdy element od środka.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process" data-screen-label="04 Jak działam">
+  <div class="section-label">Jak to działa?</div>
+  <h2>Prosto, bez zbędnych formalności</h2>
+  <div class="process-steps">
+    <div class="process-step"><div class="step-dot">1</div><h3>Przesyłasz brief</h3><p>Rzut, wymiary, zdjęcia, notatki na kartce — cokolwiek masz. Nie potrzebuję gotowego projektu.</p></div>
+    <div class="process-step"><div class="step-dot">2</div><h3>Wspólna konsultacja</h3><p>Krótka rozmowa telefoniczna — doprecyzujemy szczegóły, ustalimy termin i cenę. Bez ukrytych kosztów.</p></div>
+    <div class="process-step"><div class="step-dot">3</div><h3>Tworzymy dokumentację</h3><p>Projekt CAD, zestawienie elementów, rozwinięcia, instrukcja montażu. Standardowo 3–5 dni roboczych.</p></div>
+    <div class="process-step"><div class="step-dot">4</div><h3>Gotowe do produkcji</h3><p>Odbierasz plik i możesz od razu lecieć z produkcją. W razie pytań — jesteśmy dostępni.</p></div>
+  </div>
+</section>
+
+<section id="cases" data-screen-label="05 Realizacje">
+  <div class="section-label">Realizacje</div>
+  <h2>Precyzja w każdym detalu —<br>zobacz nasze ostatnie projekty</h2>
+  <div class="cases-grid">
+    <a href="realizacje.html" class="case-card" style="text-decoration:none; color:inherit;">
+      <div class="case-img">
+        <div class="case-img-placeholder">
+          <img src="projekt-3d.png" alt="Projekt CAD Kuchni" style="width:100%; height:100%; object-fit:cover; opacity:0.8;">
+        </div>
+        <span class="case-tag">Kuchnie Premium</span>
+      </div>
+      <div class="case-body">
+        <div class="case-title">Nowoczesna kuchnia z wyspą</div>
+        <p class="case-desc">Zabudowa 6,5mb zintegrowana z systemem cargo i ukrytą spiżarnią. Idealne szczeliny i precyzja pod AGD.</p>
+        <div class="case-metrics">
+          <div class="case-metric"><span>3 dni</span><span>Czas CAD</span></div>
+          <div class="case-metric"><span>0</span><span>Błędów</span></div>
+        </div>
+      </div>
+    </a>
+    <a href="realizacje.html" class="case-card" style="text-decoration:none; color:inherit;">
+      <div class="case-img">
+        <div class="case-img-placeholder">
+          <svg class="case-img-icon" viewBox="0 0 48 48"><rect x="6" y="8" width="36" height="32" rx="2"/><line x1="6" y1="16" x2="42" y2="16"/><line x1="14" y1="24" x2="34" y2="24"/></svg>
+          <span class="case-img-label">Garderoby i Skosy</span>
+        </div>
+        <span class="case-tag">Garderoby</span>
+      </div>
+      <div class="case-body">
+        <div class="case-title">Zabudowa poddasza ze skosami</div>
+        <p class="case-desc">Eliminacja martwych stref przy trudnych skosach. Pełna dokumentacja uwzględniająca docięcia korpusów pod kątem.</p>
+        <div class="case-metrics">
+          <div class="case-metric"><span>48h</span><span>Czas CAD</span></div>
+          <div class="case-metric"><span>100%</span><span>Wykorzystania</span></div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div style="text-align: center; margin-top: 48px;">
+    <a href="realizacje.html" class="btn btn-dark">ZOBACZ WSZYSTKIE REALIZACJE →</a>
+  </div>
+</section>
+
+<section id="cta" data-screen-label="07 Kontakt CTA">
+  <div class="cta-inner">
+    <div class="cta-text">
+      <div class="section-label">Zacznijmy</div>
+      <h2>Jeden telefon.<br>Spokojny montaż.</h2>
+      <p class="lead" style="margin-bottom:24px">Zostaw swój numer — oddzwonimy w ciągu kilku godzin.</p>
+      <div class="cta-promise">
+        <div class="cta-promise-item">Bezpłatna 20-minutowa konsultacja</div>
+        <div class="cta-promise-item">Wycena w 24 godziny</div>
+        <div class="cta-promise-item">Realizacja standardowo w 3–5 dni</div>
+        <div class="cta-promise-item">Gwarancja poprawek, jeśli coś nie gra</div>
+      </div>
+      <div class="wa-alt-wrap">
+        <a href="https://wa.me/48123456789" target="_blank" class="wa-alt">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <span>Napisz na WhatsApp</span>
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="cta-form" id="contactForm">
+        <h3>ZACZNIJMY PROJEKT</h3>
+        <p class="cta-form-sub">Bez długich formularzy. Tylko podstawowy kontakt.</p>
+        <div class="form-group"><label>Imię i nazwisko</label><input type="text" id="f-name" placeholder="np. Marek Kowalski"></div>
+        <div class="form-group"><label>Telefon</label><input type="tel" id="f-phone" placeholder="+48 ___ ___ ___"></div>
+        <div class="form-group"><label>E-mail (opcjonalnie)</label><input type="email" id="f-email" placeholder="adres@twojafirma.pl"></div>
+        <button class="form-submit" onclick="submitForm()">Oddzwoń do mnie →</button>
+        <p class="form-note">🔒 Twoje dane są bezpieczne.</p>
+      </div>
+      <div id="formSuccess" style="display:none;background:var(--white);padding:40px;border-top:4px solid #16a34a;text-align:center">
+        <div style="font-size:48px;margin-bottom:16px">✓</div>
+        <h3 style="font-family:var(--f-d);font-size:24px;margin-bottom:8px">Gotowe!</h3>
+        <p style="color:var(--mid);font-size:15px">Oddzwonimy w ciągu kilku godzin. Pilny kontakt: <strong>+48 123 456 789</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="opinion">
+  <div class="opinion-slider" id="opinionSlider">
+    <div class="opinion-slide active">
+      <div class="opinion-stars">★★★★★</div>
+      <p class="opinion-text">"Pierwszy raz od lat montaż kuchni przeszedł bez jednej poprawki. Dokumentacja była tak dokładna, że mój pracownik pojechał sam i dał radę."</p>
+      <div class="opinion-author">Stolarnia Meblex, Katowice</div>
+    </div>
+    <div class="opinion-slide">
+      <div class="opinion-stars">★★★★★</div>
+      <p class="opinion-text">"Najlepsza decyzja to oddelegowanie technologii. Mam więcej czasu na montaże i nowych klientów, a projekty są bezbłędne."</p>
+      <div class="opinion-author">Marek, Meble na Wymiar</div>
+    </div>
+    <div class="opinion-slide">
+      <div class="opinion-stars">★★★★★</div>
+      <p class="opinion-text">"Projekty techniczne są czytelne i bardzo precyzyjne. CNC nie kłamie, wszystko pasuje co do milimetra. Polecam każdemu stolarzowi."</p>
+      <div class="opinion-author">Studio Q-Design</div>
+    </div>
+  </div>
+  <div class="opinion-nav" id="opinionNav">
+    <div class="opinion-dot active" onclick="setSlide(0)"></div>
+    <div class="opinion-dot" onclick="setSlide(1)"></div>
+    <div class="opinion-dot" onclick="setSlide(2)"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">PROJEKTANT<span>24</span></div>
+  <div class="footer-links">
+    <a href="cennik.html">Cennik</a>
+    <a href="realizacje.html">Realizacje</a>
+    <a href="blog.html">Blog</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="https://facebook.com/projektant24" target="_blank" rel="noopener">Facebook</a>
+  </div>
+  <div class="footer-copy">© 2026 Projektant24. Wszelkie prawa zastrzeżone.</div>
+</footer>
+
+<a href="https://wa.me/48123456789" target="_blank" class="wa-float">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+function submitForm() {
+  const name = document.getElementById('f-name').value;
+  const phone = document.getElementById('f-phone').value;
+  if(!name || !phone) { alert('Prosimy podać imię i numer telefonu.'); return; }
+  document.getElementById('contactForm').style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+}
+
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+});
+
+// Opinion Slider
+let currentSlide = 0;
+const slides = document.querySelectorAll('.opinion-slide');
+const dots = document.querySelectorAll('.opinion-dot');
+
+function setSlide(index) {
+  slides[currentSlide].classList.remove('active');
+  dots[currentSlide].classList.remove('active');
+  currentSlide = index;
+  slides[currentSlide].classList.add('active');
+  dots[currentSlide].classList.add('active');
+}
+
+function nextSlide() {
+  let next = (currentSlide + 1) % slides.length;
+  setSlide(next);
+}
+
+setInterval(nextSlide, 5000);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projektant24 — Brand Book</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Barlow+Condensed:wght@300;400;500;600;700;800&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black:    #1A1A1A;
+    --dark:     #2C2C2C;
+    --mid:      #6B6B6B;
+    --light:    #D4D4D4;
+    --paper:    #F2F0EC;
+    --white:    #FFFFFF;
+    --orange:   #E8620A;
+    --orange-d: #C0510A;
+
+    --f-display: 'Barlow Condensed', sans-serif;
+    --f-body:    'Barlow', sans-serif;
+    --f-wordmark: 'Audiowide', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--f-body);
+    background: var(--paper);
+    color: var(--black);
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: var(--black);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 40px; height: 52px;
+    border-bottom: 2px solid var(--orange);
+  }
+  .nav-logo {
+    font-family: var(--f-wordmark); font-weight: 400; font-size: 14px;
+    color: var(--white); letter-spacing: 0.02em;
+  }
+  .nav-logo span { color: var(--orange); }
+  .nav-links { display: flex; gap: 28px; }
+  .nav-links a {
+    color: var(--light); font-size: 12px; text-decoration: none;
+    letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--orange); }
+
+  /* SECTIONS */
+  section { padding: 100px 40px 80px; }
+  .section-label {
+    font-family: var(--f-display); font-size: 11px; font-weight: 600;
+    letter-spacing: 0.2em; text-transform: uppercase; color: var(--orange);
+    display: flex; align-items: center; gap: 12px; margin-bottom: 40px;
+  }
+  .section-label::after {
+    content: ''; flex: 1; max-width: 60px; height: 2px; background: var(--orange);
+  }
+  h2 {
+    font-family: var(--f-display); font-weight: 700; font-size: clamp(32px, 4vw, 52px);
+    line-height: 1.1; letter-spacing: -0.01em; color: var(--black);
+    margin-bottom: 20px;
+  }
+  .lead {
+    font-size: 17px; color: var(--mid); max-width: 560px; font-weight: 400;
+    line-height: 1.7; margin-bottom: 60px;
+  }
+
+  /* ══ HERO ══ */
+  #hero {
+    min-height: 100vh; background: var(--black);
+    display: flex; flex-direction: column;
+    padding: 0; overflow: hidden; position: relative;
+  }
+  .hero-grid {
+    position: absolute; inset: 0; opacity: 0.04;
+    background-image:
+      linear-gradient(var(--white) 1px, transparent 1px),
+      linear-gradient(90deg, var(--white) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-content {
+    flex: 1; display: flex; flex-direction: column; justify-content: center;
+    padding: 120px 80px 60px; position: relative; z-index: 1;
+    max-width: 1200px;
+  }
+  .hero-eyebrow {
+    font-family: var(--f-display); font-size: 12px; font-weight: 500;
+    letter-spacing: 0.25em; text-transform: uppercase; color: var(--orange);
+    margin-bottom: 32px; display: flex; align-items: center; gap: 16px;
+  }
+  .hero-eyebrow::before {
+    content: ''; display: block; width: 40px; height: 2px; background: var(--orange);
+  }
+  .hero-title {
+    font-family: var(--f-wordmark); font-weight: 400;
+    font-size: clamp(40px, 7vw, 100px);
+    line-height: 0.9; letter-spacing: -0.02em; color: var(--white);
+    margin-bottom: 40px;
+  }
+  .hero-title .accent { color: var(--orange); }
+  .hero-tagline {
+    font-size: 20px; color: var(--light); font-weight: 300; max-width: 480px;
+    line-height: 1.6; border-left: 3px solid var(--orange); padding-left: 20px;
+  }
+  .hero-meta {
+    padding: 30px 80px; border-top: 1px solid rgba(255,255,255,0.08);
+    display: flex; gap: 60px; position: relative; z-index: 1;
+  }
+  .hero-meta-item span:first-child {
+    display: block; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--mid); font-weight: 500; margin-bottom: 4px;
+  }
+  .hero-meta-item span:last-child {
+    font-family: var(--f-display); font-size: 15px; font-weight: 600;
+    color: var(--light); letter-spacing: 0.02em;
+  }
+
+  /* ══ LOGO ══ */
+  #logo { background: var(--paper); }
+  .logo-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 2px;
+  }
+  .logo-card {
+    padding: 48px; display: flex; flex-direction: column;
+    justify-content: space-between; min-height: 220px; position: relative;
+  }
+  .logo-card.light { background: var(--white); }
+  .logo-card.dark  { background: var(--black); }
+  .logo-card.gray  { background: var(--light); }
+  .logo-card.orange{ background: var(--orange); }
+  .logo-card-label {
+    font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+    font-weight: 500;
+  }
+  .logo-card.light .logo-card-label,
+  .logo-card.gray  .logo-card-label  { color: var(--mid); }
+  .logo-card.dark  .logo-card-label  { color: rgba(255,255,255,0.4); }
+  .logo-card.orange .logo-card-label { color: rgba(255,255,255,0.7); }
+
+  /* Wordmark CSS */
+  .wm {
+    font-family: var(--f-wordmark); font-weight: 400;
+    font-size: 40px; line-height: 1; letter-spacing: -0.01em;
+    display: block;
+  }
+  .wm .wm-num { color: var(--orange); }
+  .wm-dark .wm-num  { color: var(--orange); }
+  .wm-light .wm-main { color: var(--black); }
+  .wm-dark  .wm-main { color: var(--white); }
+  .wm-orange .wm-main { color: var(--white); }
+  .wm-orange .wm-num  { color: var(--black); }
+  .wm-gray  .wm-main { color: var(--black); }
+  .wm-mono  .wm-main { color: var(--black); }
+  .wm-mono  .wm-num  { color: var(--black); }
+
+  /* ══ COLORS ══ */
+  #colors { background: var(--white); }
+  .color-strip {
+    display: flex; height: 120px; border-radius: 4px; overflow: hidden;
+    margin-bottom: 40px; box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+  }
+  .color-strip-block { flex: 1; }
+  .color-swatches {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 24px;
+  }
+  .swatch {
+    border-radius: 6px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  }
+  .swatch-block { height: 100px; }
+  .swatch-info { padding: 14px 16px; background: var(--white); border-top: 1px solid #eee; }
+  .swatch-name {
+    font-family: var(--f-display); font-weight: 700; font-size: 15px; margin-bottom: 4px;
+  }
+  .swatch-hex {
+    font-size: 12px; color: var(--mid); letter-spacing: 0.05em; font-weight: 500;
+  }
+  .swatch-role { font-size: 12px; color: var(--light); margin-top: 2px; }
+
+  /* ══ TYPOGRAPHY ══ */
+  #typography { background: var(--paper); }
+  .type-showcase { margin-bottom: 60px; }
+  .type-row {
+    display: flex; align-items: baseline; gap: 24px;
+    border-bottom: 1px solid var(--light); padding: 20px 0;
+  }
+  .type-label {
+    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--mid); font-weight: 500; min-width: 120px;
+  }
+  .type-sample { line-height: 1.2; }
+  .type-meta { font-size: 12px; color: var(--light); margin-left: auto; white-space: nowrap; }
+
+  /* ══ VOICE ══ */
+  #voice { background: var(--black); color: var(--white); }
+  #voice h2 { color: var(--white); }
+  #voice .lead { color: rgba(255,255,255,0.5); }
+  .voice-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+  }
+  .voice-card {
+    padding: 36px; background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .voice-card.good { border-left: 4px solid var(--orange); }
+  .voice-card.bad  { border-left: 4px solid var(--mid); }
+  .voice-card-tag {
+    font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+    font-weight: 600; margin-bottom: 16px;
+  }
+  .voice-card.good .voice-card-tag { color: var(--orange); }
+  .voice-card.bad  .voice-card-tag { color: var(--mid); }
+  .voice-card p {
+    font-size: 17px; line-height: 1.6; font-weight: 300;
+  }
+  .voice-card.good p { color: var(--white); }
+  .voice-card.bad  p { color: rgba(255,255,255,0.3); text-decoration: line-through; text-decoration-color: var(--mid); }
+  .voice-principles {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 2px;
+  }
+  .principle {
+    padding: 36px; background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .principle-num {
+    font-family: var(--f-display); font-size: 48px; font-weight: 800;
+    color: var(--orange); opacity: 0.4; line-height: 1; margin-bottom: 16px;
+  }
+  .principle h3 {
+    font-family: var(--f-display); font-size: 20px; font-weight: 700;
+    color: var(--white); margin-bottom: 10px;
+  }
+  .principle p { font-size: 14px; color: rgba(255,255,255,0.45); line-height: 1.65; }
+
+  /* ══ MOCKUPS ══ */
+  #mockups { background: var(--paper); }
+  .mockup-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+  }
+  .mockup-wrap { display: flex; flex-direction: column; gap: 16px; }
+  .mockup-label {
+    font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--mid); font-weight: 500;
+  }
+
+  /* Business card */
+  .biz-card {
+    width: 340px; height: 192px; background: var(--black); border-radius: 8px;
+    padding: 30px 32px; display: flex; flex-direction: column;
+    justify-content: space-between; position: relative; overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+  }
+  .biz-card-bg {
+    position: absolute; bottom: -20px; right: -20px;
+    font-family: var(--f-wordmark); font-size: 110px; font-weight: 400;
+    color: rgba(255,255,255,0.025); line-height: 1; user-select: none;
+  }
+  .biz-name { font-family: var(--f-wordmark); font-size: 10px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); }
+  .biz-name span { color: var(--orange); }
+  .biz-title { font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 0.05em; margin-top: 4px; }
+  .biz-contacts { font-size: 12px; color: rgba(255,255,255,0.6); line-height: 1.8; }
+  .biz-line { width: 24px; height: 2px; background: var(--orange); margin-bottom: 8px; }
+
+  .biz-card-back {
+    width: 340px; height: 192px; background: var(--orange); border-radius: 8px;
+    padding: 30px 32px; display: flex; flex-direction: column;
+    justify-content: center; position: relative; overflow: hidden;
+    box-shadow: 0 12px 40px rgba(232,98,10,0.3);
+  }
+  .biz-promise {
+    font-family: var(--f-display); font-size: 22px; font-weight: 700;
+    color: var(--white); line-height: 1.3; max-width: 220px;
+  }
+
+  /* Social media */
+  .social-post {
+    width: 360px; height: 360px; background: var(--black);
+    border-radius: 8px; overflow: hidden; position: relative;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+    display: flex; flex-direction: column; justify-content: space-between;
+    padding: 32px;
+  }
+  .sp-grid {
+    position: absolute; inset: 0; opacity: 0.04;
+    background-image:
+      linear-gradient(var(--white) 1px, transparent 1px),
+      linear-gradient(90deg, var(--white) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .sp-top { position: relative; z-index: 1; }
+  .sp-tag {
+    display: inline-block; font-size: 10px; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--orange); font-weight: 600;
+    border: 1px solid var(--orange); padding: 4px 10px; border-radius: 2px;
+    margin-bottom: 16px;
+  }
+  .sp-headline {
+    font-family: var(--f-display); font-size: 30px; font-weight: 800;
+    line-height: 1.15; color: var(--white);
+  }
+  .sp-headline em { color: var(--orange); font-style: normal; }
+  .sp-bottom { position: relative; z-index: 1; display: flex; justify-content: space-between; align-items: flex-end; }
+  .sp-logo { font-family: var(--f-wordmark); font-size: 11px; font-weight: 400; color: var(--white); letter-spacing: 0.02em; }
+  .sp-logo span { color: var(--orange); }
+  .sp-url { font-size: 11px; color: rgba(255,255,255,0.3); }
+
+  /* LinkedIn banner */
+  .li-banner {
+    width: 100%; max-width: 600px; height: 157px; background: var(--black);
+    border-radius: 6px; overflow: hidden; position: relative;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15); display: flex; align-items: center;
+    padding: 0 40px;
+  }
+  .li-bg { position: absolute; inset: 0; opacity: 0.04; background-image: linear-gradient(var(--white) 1px, transparent 1px), linear-gradient(90deg, var(--white) 1px, transparent 1px); background-size: 40px 40px; }
+  .li-accent { position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: var(--orange); }
+  .li-content { position: relative; z-index: 1; }
+  .li-name { font-family: var(--f-wordmark); font-size: 22px; font-weight: 400; color: var(--white); letter-spacing: -0.01em; }
+  .li-name span { color: var(--orange); }
+  .li-sub { font-size: 13px; color: rgba(255,255,255,0.45); margin-top: 6px; letter-spacing: 0.02em; }
+
+  /* ══ ICONS / ELEMENTS ══ */
+  #elements { background: var(--white); }
+  .elem-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 2px;
+  }
+  .elem-card {
+    background: var(--paper); padding: 32px 24px;
+    display: flex; flex-direction: column; align-items: center; gap: 16px;
+    text-align: center;
+  }
+  .elem-icon {
+    width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;
+  }
+  .elem-icon svg { width: 100%; height: 100%; }
+  .elem-name { font-family: var(--f-display); font-size: 14px; font-weight: 600; color: var(--black); }
+  .elem-desc { font-size: 12px; color: var(--mid); line-height: 1.5; }
+
+  /* Tweaks */
+  #tweaks-panel {
+    position: fixed; bottom: 24px; right: 24px; z-index: 999;
+    background: var(--black); border: 1px solid rgba(255,255,255,0.12);
+    border-top: 3px solid var(--orange); border-radius: 6px;
+    padding: 20px 22px; width: 240px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    display: none;
+  }
+  #tweaks-panel h3 {
+    font-family: var(--f-display); font-size: 13px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--white); margin-bottom: 16px;
+  }
+  .tweak-row { margin-bottom: 14px; }
+  .tweak-row label { font-size: 11px; color: rgba(255,255,255,0.5); letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 6px; }
+  .tweak-row input[type=color] { width: 100%; height: 32px; border: none; border-radius: 3px; cursor: pointer; padding: 2px; background: rgba(255,255,255,0.06); }
+  .tweak-row select {
+    width: 100%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+    color: var(--white); font-size: 12px; padding: 6px 8px; border-radius: 3px; cursor: pointer;
+    font-family: var(--f-body);
+  }
+  .tweak-btn {
+    width: 100%; margin-top: 8px; padding: 8px;
+    background: var(--orange); border: none; color: var(--white);
+    font-family: var(--f-display); font-weight: 700; font-size: 13px;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    border-radius: 3px; cursor: pointer;
+  }
+  .tweak-btn:hover { background: var(--orange-d); }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    section { padding: 80px 24px 60px; }
+    .hero-content { padding: 100px 24px 40px; }
+    .hero-meta { padding: 24px 24px; flex-wrap: wrap; gap: 20px; }
+    .voice-grid, .voice-principles, .mockup-grid { grid-template-columns: 1fr; }
+    .biz-card, .biz-card-back, .social-post { width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">PROJEKTANT<span>24</span></div>
+  <div class="nav-links">
+    <a href="#logo">Logo</a>
+    <a href="#colors">Kolory</a>
+    <a href="#typography">Typografia</a>
+    <a href="#voice">Głos marki</a>
+    <a href="#mockups">Mockupy</a>
+    <a href="#elements">Elementy</a>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Brand Identity System</div>
+    <h1 class="hero-title">
+      PROJEKTANT<span class="accent">24</span>
+    </h1>
+    <p class="hero-tagline">
+      Dokumentacja bez błędów.<br>Montaż bez stresu.<br>Czas z powrotem dla Ciebie.
+    </p>
+  </div>
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <span>Branża</span>
+      <span>Dokumentacja CAD dla stolarzy</span>
+    </div>
+    <div class="hero-meta-item">
+      <span>Charakter</span>
+      <span>Praktyczny ekspert, partner z branży</span>
+    </div>
+    <div class="hero-meta-item">
+      <span>Wersja</span>
+      <span>v1.0 — 2026</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ LOGO ══ -->
+<section id="logo">
+  <div class="section-label">01 — Logo</div>
+  <h2>Wordmark</h2>
+  <p class="lead">Nowoczesny i techniczny font Audiowide. Nazwa mówi sama za siebie — "24" w akcencie pomarańczowym sygnalizuje dostępność i szybkość reakcji.</p>
+
+  <div class="logo-grid">
+
+    <!-- Light bg -->
+    <div class="logo-card light">
+      <span class="logo-card-label" style="color:var(--mid)">Wariant podstawowy — jasne tło</span>
+      <div>
+        <div style="font-family:var(--f-wordmark);font-weight:400;font-size:24px;line-height:1;letter-spacing:-0.01em;color:var(--black)">PROJEKTANT<span style="color:var(--orange)">24</span></div>
+        <div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);margin-top:6px">dokumentacja dla stolarzy</div>
+      </div>
+    </div>
+
+    <!-- Dark bg -->
+    <div class="logo-card dark">
+      <span class="logo-card-label">Wariant negatywowy — ciemne tło</span>
+      <div>
+        <div style="font-family:var(--f-wordmark);font-weight:400;font-size:24px;line-height:1;letter-spacing:-0.01em;color:var(--white)">PROJEKTANT<span style="color:var(--orange)">24</span></div>
+        <div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-top:6px">dokumentacja dla stolarzy</div>
+      </div>
+    </div>
+
+    <!-- Orange bg -->
+    <div class="logo-card orange">
+      <span class="logo-card-label">Wariant na akcencie — pomarańczowe tło</span>
+      <div>
+        <div style="font-family:var(--f-wordmark);font-weight:400;font-size:24px;line-height:1;letter-spacing:-0.01em;color:var(--white)">PROJEKTANT<span style="color:var(--black)">24</span></div>
+        <div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.65);margin-top:6px">dokumentacja dla stolarzy</div>
+      </div>
+    </div>
+
+    <!-- Compact monogram -->
+    <div class="logo-card gray">
+      <span class="logo-card-label" style="color:var(--mid)">Wersja zwarta — awatar / favicon</span>
+      <div>
+        <div style="font-family:var(--f-wordmark);font-weight:400;font-size:36px;line-height:1;letter-spacing:-0.02em;color:var(--black)">P<span style="color:var(--orange)">24</span></div>
+        <div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);margin-top:6px">Wersja skrócona P24</div>
+      </div>
+    </div>
+
+    <!-- Monochrome black -->
+    <div class="logo-card light" style="background:var(--paper)">
+      <span class="logo-card-label" style="color:var(--mid)">Wersja monochromatyczna — cała czerń</span>
+      <div>
+        <div style="font-family:var(--f-wordmark);font-weight:400;font-size:24px;line-height:1;letter-spacing:-0.01em;color:var(--black)">PROJEKTANT<span style="color:var(--black)">24</span></div>
+        <div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);margin-top:6px">Do nadruków jednobarwnych</div>
+      </div>
+    </div>
+
+    <!-- Horizontal with rule -->
+    <div class="logo-card dark">
+      <span class="logo-card-label">Wersja z linią podziału</span>
+      <div style="display:flex;align-items:center;gap:18px">
+        <div style="font-family:var(--f-wordmark);font-weight:400;font-size:32px;line-height:1;color:var(--white)">P</div>
+        <div style="width:2px;height:50px;background:var(--orange)"></div>
+        <div>
+          <div style="font-family:var(--f-wordmark);font-weight:400;font-size:16px;color:#fff;letter-spacing:0.03em">PROJEKTANT<span style="color:var(--orange)">24</span></div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.35);letter-spacing:0.1em;text-transform:uppercase;margin-top:4px">dokumentacja dla stolarzy</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ COLORS ══ -->
+<section id="colors">
+  <div class="section-label">02 — Kolory</div>
+  <h2>Paleta barw</h2>
+  <p class="lead">Monochromatyczna baza z jednym, precyzyjnie dozowanym akcentem. Pomarańcz to narzędzie — używaj go tam, gdzie masz coś ważnego do powiedzenia.</p>
+
+  <div class="color-strip" style="margin-bottom:48px">
+    <div class="color-strip-block" style="background:#1A1A1A;flex:1.5"></div>
+    <div class="color-strip-block" style="background:#2C2C2C"></div>
+    <div class="color-strip-block" style="background:#6B6B6B"></div>
+    <div class="color-strip-block" style="background:#D4D4D4"></div>
+    <div class="color-strip-block" style="background:#F2F0EC"></div>
+    <div class="color-strip-block" style="background:#FFFFFF"></div>
+    <div class="color-strip-block" style="background:#E8620A;flex:0.6"></div>
+  </div>
+
+  <div class="color-swatches">
+    <div class="swatch">
+      <div class="swatch-block" style="background:#1A1A1A"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Czerń</div>
+        <div class="swatch-hex">#1A1A1A</div>
+        <div class="swatch-role" style="color:var(--mid)">Tło, nagłówki, tekst premium</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#2C2C2C"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Antracyt</div>
+        <div class="swatch-hex">#2C2C2C</div>
+        <div class="swatch-role" style="color:var(--mid)">Tła sekcji, karty</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#6B6B6B"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Szary</div>
+        <div class="swatch-hex">#6B6B6B</div>
+        <div class="swatch-role" style="color:var(--mid)">Tekst pomocniczy, subtytuły</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#D4D4D4"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Jasny szary</div>
+        <div class="swatch-hex">#D4D4D4</div>
+        <div class="swatch-role" style="color:var(--mid)">Linie, bordery, ikony</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#F2F0EC"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Papier</div>
+        <div class="swatch-hex">#F2F0EC</div>
+        <div class="swatch-role" style="color:var(--mid)">Tło strony, sekcje neutralne</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#FFFFFF;border:1px solid #eee"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Biel</div>
+        <div class="swatch-hex">#FFFFFF</div>
+        <div class="swatch-role" style="color:var(--mid)">Karty, tabele, sekcje treści</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#E8620A"></div>
+      <div class="swatch-info">
+        <div class="swatch-name" style="color:var(--orange)">Pomarańcz</div>
+        <div class="swatch-hex">#E8620A</div>
+        <div class="swatch-role" style="color:var(--mid)">Akcent, CTA, wyróżnienia</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#C0510A"></div>
+      <div class="swatch-info">
+        <div class="swatch-name" style="color:var(--orange-d)">Pomarańcz ciemny</div>
+        <div class="swatch-hex">#C0510A</div>
+        <div class="swatch-role" style="color:var(--mid)">Hover, aktywne stany</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TYPOGRAPHY ══ -->
+<section id="typography">
+  <div class="section-label">03 — Typografia</div>
+  <h2>Kroje pisma</h2>
+  <p class="lead">Dwa fonty: techniczny Audiowide wyłącznie dla logotypu oraz rodzina Barlow. Kondensowany dla nagłówków (ekonomia miejsca), regularny dla treści (czytelność).</p>
+
+  <div class="type-showcase">
+    <div class="type-row">
+      <span class="type-label">Wordmark / Logo</span>
+      <span class="type-sample" style="font-family:var(--f-wordmark);font-weight:400;font-size:24px">PROJEKTANT24</span>
+      <span class="type-meta">Audiowide 400 · 24px</span>
+    </div>
+    <div class="type-row">
+      <span class="type-label">Display / H1</span>
+      <span class="type-sample" style="font-family:var(--f-display);font-weight:800;font-size:52px;letter-spacing:-0.02em">Dokumentacja bez błędów.</span>
+      <span class="type-meta">Barlow Condensed 800 · 52px</span>
+    </div>
+    <div class="type-row">
+      <span class="type-label">Nagłówek H2</span>
+      <span class="type-sample" style="font-family:var(--f-display);font-weight:700;font-size:36px">Jak to działa?</span>
+      <span class="type-meta">Barlow Condensed 700 · 36px</span>
+    </div>
+    <div class="type-row">
+      <span class="type-label">Nagłówek H3</span>
+      <span class="type-sample" style="font-family:var(--f-display);font-weight:600;font-size:24px">Projekt gotowy w 48 godzin</span>
+      <span class="type-meta">Barlow Condensed 600 · 24px</span>
+    </div>
+    <div class="type-row">
+      <span class="type-label">Lead / intro</span>
+      <span class="type-sample" style="font-size:18px;font-weight:400;color:var(--mid)">Zdejmuję z Ciebie ciężar projektowy. Dostajesz dokumentację gotową do produkcji.</span>
+      <span class="type-meta">Barlow 400 · 18px</span>
+    </div>
+    <div class="type-row">
+      <span class="type-label">Treść</span>
+      <span class="type-sample" style="font-size:16px;font-weight:400">Każdy projekt przechodzi przez moje ręce dwa razy — raz gdy go tworzę, raz gdy mentalnie idę z nim na montaż.</span>
+      <span class="type-meta">Barlow 400 · 16px</span>
+    </div>
+    <div class="type-row">
+      <span class="type-label">Label / etykieta</span>
+      <span class="type-sample" style="font-size:11px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--orange)">Dokumentacja techniczna</span>
+      <span class="type-meta">Barlow 600 · 11px · caps</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ VOICE ══ -->
+<section id="voice">
+  <div class="section-label" style="color:var(--orange)">04 — Głos marki</div>
+  <h2>Jak mówimy</h2>
+  <p class="lead">Konkretnie, partnersko, bez lania wody. Piszemy tak, jak rozmawiamy na hali produkcyjnej — wprost i do rzeczy.</p>
+
+  <div class="voice-grid">
+    <div class="voice-card good">
+      <div class="voice-card-tag">✓ Tak piszemy</div>
+      <p>"Twoja dokumentacja będzie gotowa za 48 godzin. Żadnych błędów montażowych — sprawdzam to osobiście przed wysyłką."</p>
+    </div>
+    <div class="voice-card bad">
+      <div class="voice-card-tag">✗ Tak nie piszemy</div>
+      <p>"Jesteśmy liderem branży oferującym najwyższą jakość usług i wieloletnie doświadczenie w kompleksowej obsłudze klientów."</p>
+    </div>
+    <div class="voice-card good">
+      <div class="voice-card-tag">✓ Tak piszemy</div>
+      <p>"Znam każdy chwyt stolarski. Moje projekty nie wracają do poprawek — bo wychodzą dopiero wtedy, gdy są gotowe na montaż."</p>
+    </div>
+    <div class="voice-card bad">
+      <div class="voice-card-tag">✗ Tak nie piszemy</div>
+      <p>"Stawiamy na innowacyjne rozwiązania i holistyczne podejście do potrzeb naszych szanownych klientów z branży drzewnej."</p>
+    </div>
+  </div>
+
+  <div class="voice-principles">
+    <div class="principle">
+      <div class="principle-num">01</div>
+      <h3>Konkret</h3>
+      <p>Termin, wymiar, wynik — nie ogólniki. Każde zdanie musi przenosić informację.</p>
+    </div>
+    <div class="principle">
+      <div class="principle-num">02</div>
+      <h3>Partner, nie usługodawca</h3>
+      <p>Mówisz "Znam ten ból" — bo go znasz. Pracowałeś na hali i na montażu. To jest Twój atut.</p>
+    </div>
+    <div class="principle">
+      <div class="principle-num">03</div>
+      <h3>Spokój przez kompetencję</h3>
+      <p>Nie obiecujesz "najlepszej jakości". Pokazujesz konkretny process, który eliminuje błędy — i to buduje zaufanie.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MOCKUPS ══ -->
+<section id="mockups">
+  <div class="section-label">05 — Mockupy</div>
+  <h2>Materiały komunikacyjne</h2>
+  <p class="lead">Spójny system na wszystkich nośnikach — od wizytówki po social media.</p>
+
+  <div class="mockup-grid">
+    <!-- Business cards -->
+    <div class="mockup-wrap">
+      <span class="mockup-label">Wizytówka — awers i rewers</span>
+      <div style="display:flex;gap:16px;flex-wrap:wrap">
+        <div class="biz-card">
+          <div class="biz-card-bg">24</div>
+          <div>
+            <div class="biz-name">PROJEKTANT<span>24</span></div>
+            <div class="biz-title">dokumentacja dla stolarzy</div>
+          </div>
+          <div>
+            <div class="biz-line"></div>
+            <div class="biz-contacts">
+              jan.kowalski@projektant24.pl<br>
+              +48 123 456 789<br>
+              projektant24.pl
+            </div>
+          </div>
+        </div>
+        <div class="biz-card-back">
+          <div class="biz-promise">Twój projekt.<br>Gotowy do<br>montażu.</div>
+          <div style="position:absolute;bottom:28px;right:28px;font-family:var(--f-wordmark);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.6)">P<span style="color:#1a1a1a">24</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Social post -->
+    <div class="mockup-wrap">
+      <span class="mockup-label">Post na Instagram / Facebook (1:1)</span>
+      <div class="social-post">
+        <div class="sp-grid"></div>
+        <div class="sp-top">
+          <div class="sp-tag">Wskazówka #3</div>
+          <div class="sp-headline">Dobra dokumentacja to<br><em>montaż bez niespodzianek.</em></div>
+        </div>
+        <div class="sp-bottom">
+          <div class="sp-logo">PROJEKTANT<span>24</span></div>
+          <div class="sp-url">projektant24.pl</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LinkedIn banner -->
+    <div class="mockup-wrap">
+      <span class="mockup-label">Baner LinkedIn (1584×396)</span>
+      <div class="li-banner">
+        <div class="li-bg"></div>
+        <div class="li-accent"></div>
+        <div class="li-content">
+          <div class="li-name">PROJEKTANT<span>24</span></div>
+          <div class="li-sub">Dokumentacja CAD dla zakładów stolarskich · Projekty bez błędów montażowych</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Email signature -->
+    <div class="mockup-wrap">
+      <span class="mockup-label">Stopka e-mail</span>
+      <div style="background:#fff;padding:24px 28px;border:1px solid #eee;border-radius:6px;max-width:440px">
+        <div style="font-family:var(--f-display);font-size:15px;font-weight:700;color:var(--black)">Jan Kowalski</div>
+        <div style="font-size:12px;color:var(--mid);margin-bottom:12px">Dokumentacja technologiczna mebli</div>
+        <div style="width:32px;height:3px;background:var(--orange);margin-bottom:12px"></div>
+        <div style="font-family:var(--f-wordmark);font-weight:400;font-size:14px;letter-spacing:-0.01em;color:var(--black)">PROJEKTANT<span style="color:var(--orange)">24</span></div>
+        <div style="font-size:12px;color:var(--mid);margin-top:10px">+48 123 456 789 · projektant24.pl</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ELEMENTS ══ -->
+<section id="elements">
+  <div class="section-label">06 — Elementy graficzne</div>
+  <h2>Ikony i motywy</h2>
+  <p class="lead">Ikonografia w stylu techniczno-narzędziowym. Precyzja kreski, minimalne detale, brak ozdobników.</p>
+
+  <div class="elem-grid">
+    <div class="elem-card">
+      <div class="elem-icon">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="6" y="8" width="36" height="32" rx="2" stroke="#1A1A1A" stroke-width="2.5"/>
+          <line x1="6" y1="16" x2="42" y2="16" stroke="#E8620A" stroke-width="2.5"/>
+          <line x1="14" y1="24" x2="34" y2="24" stroke="#6B6B6B" stroke-width="1.5"/>
+          <line x1="14" y1="30" x2="28" y2="30" stroke="#6B6B6B" stroke-width="1.5"/>
+          <line x1="14" y1="36" x2="24" y2="36" stroke="#D4D4D4" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <div class="elem-name">Dokumentacja</div>
+      <div class="elem-desc">Projekt, rysunki techniczne, zestawienia materiałów</div>
+    </div>
+    <div class="elem-card">
+      <div class="elem-icon">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 40 L8 16 L24 8 L40 16 L40 40" stroke="#1A1A1A" stroke-width="2.5" stroke-linejoin="round"/>
+          <rect x="18" y="28" width="12" height="12" stroke="#E8620A" stroke-width="2"/>
+          <line x1="24" y1="8" x2="24" y2="16" stroke="#1A1A1A" stroke-width="2.5"/>
+        </svg>
+      </div>
+      <div class="elem-name">Montaż</div>
+      <div class="elem-desc">Instrukcje montażu, sekwencje, detale</div>
+    </div>
+    <div class="elem-card">
+      <div class="elem-icon">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="24" r="16" stroke="#1A1A1A" stroke-width="2.5"/>
+          <path d="M24 14 L24 24 L32 28" stroke="#E8620A" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="24" cy="24" r="2" fill="#1A1A1A"/>
+        </svg>
+      </div>
+      <div class="elem-name">Czas</div>
+      <div class="elem-desc">Szybka realizacja, terminy, dostępność 24h</div>
+    </div>
+    <div class="elem-card">
+      <div class="elem-icon">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 26 L20 34 L36 14" stroke="#E8620A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="24" cy="24" r="18" stroke="#1A1A1A" stroke-width="2"/>
+        </svg>
+      </div>
+      <div class="elem-name">Gwarancja</div>
+      <div class="elem-desc">Zero błędów montażowych, jakość weryfikowana</div>
+    </div>
+    <div class="elem-card">
+      <div class="elem-icon">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="8" width="20" height="26" rx="1" stroke="#1A1A1A" stroke-width="2.5"/>
+          <rect x="18" y="14" width="20" height="26" rx="1" stroke="#6B6B6B" stroke-width="2"/>
+          <line x1="10" y1="18" x2="30" y2="18" stroke="#E8620A" stroke-width="1.5"/>
+          <line x1="14" y1="24" x2="26" y2="24" stroke="#D4D4D4" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <div class="elem-name">CAD</div>
+      <div class="elem-desc">Precyzyjne rysunki techniczne w formacie cyfrowym</div>
+    </div>
+    <div class="elem-card">
+      <div class="elem-icon">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 38 L10 22 L24 10 L38 22 L38 38" stroke="#6B6B6B" stroke-width="2"/>
+          <path d="M18 30 L24 24 L30 30" stroke="#E8620A" stroke-width="2.5" stroke-linejoin="round"/>
+          <line x1="24" y1="24" x2="24" y2="38" stroke="#E8620A" stroke-width="2.5"/>
+        </svg>
+      </div>
+      <div class="elem-name">Ekspert</div>
+      <div class="elem-desc">Doświadczenie praktyczne, znajomość realiów produkcji</div>
+    </div>
+  </div>
+
+  <!-- Grid motif -->
+  <div style="margin-top:60px">
+    <div class="section-label">Motyw graficzny — siatka techniczna</div>
+    <div style="display:flex;gap:24px;flex-wrap:wrap;margin-top:24px">
+      <div style="width:200px;height:120px;background:var(--black);border-radius:4px;position:relative;overflow:hidden">
+        <div style="position:absolute;inset:0;opacity:0.08;background-image:linear-gradient(var(--white) 1px, transparent 1px),linear-gradient(90deg, var(--white) 1px, transparent 1px);background-size:20px 20px"></div>
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
+          <span style="font-family:var(--f-display);font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.3)">Siatka ciemna</span>
+        </div>
+      </div>
+      <div style="width:200px;height:120px;background:var(--paper);border-radius:4px;border:1px solid var(--light);position:relative;overflow:hidden">
+        <div style="position:absolute;inset:0;opacity:0.4;background-image:linear-gradient(var(--light) 1px, transparent 1px),linear-gradient(90deg, var(--light) 1px, transparent 1px);background-size:20px 20px"></div>
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
+          <span style="font-family:var(--f-display);font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--mid)">Siatka jasna</span>
+        </div>
+      </div>
+      <div style="width:200px;height:120px;background:var(--black);border-radius:4px;border-left:4px solid var(--orange);padding:20px;display:flex;flex-direction:column;justify-content:flex-end">
+        <span style="font-family:var(--f-display);font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--orange)">Linia akcentu</span>
+        <span style="font-size:12px;color:rgba(255,255,255,0.4);margin-top:4px">Lewy border pomarańczowy</span>
+      </div>
+      <div style="width:200px;height:120px;background:var(--white);border-radius:4px;padding:20px;display:flex;flex-direction:column;gap:8px;border:1px solid var(--light)">
+        <div style="height:3px;background:var(--orange);width:32px"></div>
+        <span style="font-family:var(--f-display);font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--mid)">Kreskowanie</span>
+        <span style="font-size:12px;color:var(--light)">Separator sekcji</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TWEAKS -->
+<div id="tweaks-panel">
+  <h3>Tweaks</h3>
+  <div class="tweak-row">
+    <label>Kolor akcentu</label>
+    <input type="color" id="tw-orange" value="#E8620A">
+  </div>
+  <div class="tweak-row">
+    <label>Tło główne</label>
+    <input type="color" id="tw-paper" value="#F2F0EC">
+  </div>
+  <div class="tweak-row">
+    <label>Wariant logo</label>
+    <select id="tw-logo">
+      <option value="caps">WERSALIKI (domyślnie)</option>
+      <option value="mixed">Mixed case</option>
+    </select>
+  </div>
+  <button class="tweak-btn" onclick="applyTweaks()">Zastosuj</button>
+</div>
+
+<script>
+  // Tweaks
+  window.addEventListener('message', e => {
+    if (e.data && e.data.type === '__activate_edit_mode') {
+      document.getElementById('tweaks-panel').style.display = 'block';
+    }
+    if (e.data && e.data.type === '__deactivate_edit_mode') {
+      document.getElementById('tweaks-panel').style.display = 'none';
+    }
+  });
+  window.parent.postMessage({ type: '__edit_mode_available' }, '*');
+
+  function applyTweaks() {
+    const orange = document.getElementById('tw-orange').value;
+    const paper  = document.getElementById('tw-paper').value;
+    document.documentElement.style.setProperty('--orange', orange);
+    document.documentElement.style.setProperty('--paper', paper);
+    window.parent.postMessage({ type: '__edit_mode_set_keys', edits: { accentColor: orange, paperColor: paper } }, '*');
+  }
+
+  // Nav smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        const y = target.getBoundingClientRect().top + window.scrollY - 60;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
