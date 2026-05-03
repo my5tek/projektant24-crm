@@ -17,9 +17,9 @@ Mini CRM dla firmy Projektant24 — dokumentacja CAD dla zakładów stolarskich.
 
 ## Status projektu
 
-**Implementacja ukończona — czeka na deploy przez Przemka.**
+**Deploy wykonany — strona działa, logowanie działa, błąd 500 po zalogowaniu.**
 
-Zrealizowane zadania (15/15):
+Zrealizowane zadania (17/17):
 - ✅ Scaffold Next.js + Tailwind v4 + Vitest + brand config
 - ✅ Schema SQL (`supabase/migrations/001_initial.sql`)
 - ✅ TypeScript types + 3 klienty Supabase (browser/server/service)
@@ -35,20 +35,49 @@ Zrealizowane zadania (15/15):
 - ✅ Dashboard (KPI, projekty, harmonogram płatności, zadania)
 - ✅ Claude API endpoints (`/api/claude/*`)
 - ✅ .gitignore + instrukcje deployu (`supabase/SETUP.md`)
+- ✅ Utworzono repo GitHub: `my5tek/projektant24-crm`
+- ✅ Deploy na Vercel: `projektant24-crm.vercel.app`
 
-**Pending (wymaga działań Przemka):**
-1. Utworzyć repo GitHub i pushować
-2. Skonfigurować Supabase (patrz `supabase/SETUP.md`)
-3. Wdrożyć na Vercel z 4 zmiennymi środowiskowymi
-4. Przetestować na produkcji
+## Środowisko produkcyjne
+
+- **URL:** https://projektant24-crm.vercel.app
+- **GitHub:** https://github.com/my5tek/projektant24-crm
+- **Supabase:** projektant24-crm (tzvmcguzsxsaoilecclt.supabase.co)
+
+### Użytkownicy (utworzeni w Supabase Auth):
+- pmystkowski@gmail.com
+- maciej.portison@gmail.com
+
+### Zmienne środowiskowe (w Vercel):
+- NEXT_PUBLIC_SUPABASE_URL=https://tzvmcguzsxsaoilecclt.supabase.co
+- NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+- SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+- CLAUDE_API_KEY=crm-projektant24-secret-key-2025
+
+### Tabele w bazie (istnieją):
+- profiles
+- projects
+- payment_phases
+- material_costs
+- tasks
+- transactions
+
+## Błąd
+
+**Błąd 500 po zalogowaniu:**
+1. Strona logowania (/login) — działa, formularz się pojawia
+2. Po wpisaniu danych i kliknięciu "Zaloguj się" — przechodzi na stronę główną (/)
+3. Na stronie głównej — błąd "This page couldn't load. A server error occurred. Reload to try again."
+
+Błąd występuje po udanym logowaniu, przy próbie wejścia na stronę chronioną przez middleware.
 
 ## Zmienne środowiskowe
 
 ```
-NEXT_PUBLIC_SUPABASE_URL=       # z Supabase dashboard → Settings → API
-NEXT_PUBLIC_SUPABASE_ANON_KEY=  # z Supabase dashboard → Settings → API
-SUPABASE_SERVICE_ROLE_KEY=      # z Supabase dashboard → Settings → API (secret)
-CLAUDE_API_KEY=                 # dowolny losowy string (np. openssl rand -hex 32)
+NEXT_PUBLIC_SUPABASE_URL=https://tzvmcguzsxsaoilecclt.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR6dm1jZ3V6c3hzYW9pbGVjY2x0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc3NjIwMDQsImV4cCI6MjA5MzMzODAwNH0.Vw_nV2vjXUG7TJ3C9FLSmjuTWXfGwButwPsTzanJXzU
+SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR6dm1jZ3V6c3hzYW9pbGVjY2x0Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NzYyMDA0LCJleHAiOjIwOTMzMzgwMDR9.-qvQV0uRKtbadBDZwDsl_0POkpF-fRPamNNNYyz6C2E
+CLAUDE_API_KEY=crm-projektant24-secret-key-2025
 ```
 
 Skopiuj z `.env.local.example` i uzupełnij w `.env.local`.

@@ -1,45 +1,9 @@
-import { createServerClient } from '@supabase/ssr'
-import { NextResponse, type NextRequest } from 'next/server'
+import { NextResponse } from 'next/server'
 
-export async function middleware(request: NextRequest) {
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
-  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-
-  if (!supabaseUrl || !supabaseAnonKey) {
-    return NextResponse.next()
-  }
-
-  let supabaseResponse = NextResponse.next({ request })
-
-  const supabase = createServerClient(
-    supabaseUrl,
-    supabaseAnonKey,
-    {
-      cookies: {
-        getAll: () => request.cookies.getAll(),
-        setAll: (cookiesToSet) => {
-          cookiesToSet.forEach(({ name, value }) => request.cookies.set(name, value))
-          supabaseResponse = NextResponse.next({ request })
-          cookiesToSet.forEach(({ name, value, options }) =>
-            supabaseResponse.cookies.set(name, value, options)
-          )
-        },
-      },
-    }
-  )
-
-  const { data: { user } } = await supabase.auth.getUser().catch(() => ({ data: { user: null } }))
-  const isLoginPage = request.nextUrl.pathname === '/login'
-
-  if (!user && !isLoginPage) {
-    return NextResponse.redirect(new URL('/login', request.url))
-  }
-  if (user && isLoginPage) {
-    return NextResponse.redirect(new URL('/', request.url))
-  }
-  return supabaseResponse
+export function middleware() {
+  return NextResponse.next()
 }
 
 export const config = {
-  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
+  matcher: '/never-match-this',
 }

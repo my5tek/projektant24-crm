@@ -18,7 +18,25 @@ export default async function DashboardPage() {
   const now = new Date()
   const month = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`
   const today = now.toISOString().slice(0, 10)
-  const supabase = await createClient()
+
+  let supabase
+  try {
+    supabase = await createClient()
+  } catch (err: any) {
+    return (
+      <>
+        <Topbar title="Dashboard" />
+        <div className="p-7">
+          <div className="bg-red-900 border border-red-500 p-4 rounded text-white">
+            <h2 className="font-bold text-lg mb-2">Błąd tworzenia klienta Supabase</h2>
+            <p className="text-red-300 text-sm">{err?.message || 'Nieznany błąd'}</p>
+            <p className="text-red-400 text-xs mt-2">URL: {process.env.NEXT_PUBLIC_SUPABASE_URL}</p>
+            <p className="text-red-400 text-xs">Key: {process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY?.slice(0,20)}...</p>
+          </div>
+        </div>
+      </>
+    )
+  }
 
   const [projects, summary, tasks, profiles] = await Promise.all([
     getProjects(),
